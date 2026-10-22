@@ -51,6 +51,9 @@ data/trace/           실기 코드 문항의 실행 추적 (135개, 문항을 �
 - 개인 학습 목적으로만 사용한다.
 
 ## 배포
+- 주소: https://hoyoungparkme.github.io/jcg-cbt/ (main 에 푸시하면 .github/workflows/pages.yml 이 자동 배포)
+- 아티팩트 사본: https://claude.ai/artifact/HDNdMm9LJ2KsS823W8oGrV
+
 서버가 필요 없는 정적 파일(index.html + data/, 약 11MB)이라 GitHub Pages·Cloudflare Pages·Netlify 같은 무료 정적 호스팅에 폴더째 올리면 된다. 유지 비용 0원. 학습 기록(풀이·북마크·필기·펜 모드 설정)은 브라우저 localStorage 에만 저장되므로 기기마다 따로 쌓이고, 브라우저 데이터를 지우면 사라진다.
 화면: 1000px 이하(태블릿 세로·폰)는 한 열로 바뀌고 답안 현황은 아래에서 올라오는 시트, 640px 이하(폰)는 여백·글자 크기를 줄인다. 판·표·코드 상자는 제 안에서 가로 스크롤.
 
