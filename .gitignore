@@ -1,0 +1,3 @@
+node_modules/
+tools/trace/build/
+__pycache__/

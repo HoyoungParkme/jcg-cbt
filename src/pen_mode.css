@@ -1,0 +1,32 @@
+/* ---------- 펜 모드 (애플펜슬 손풀이) ---------- */
+:root{--ink-ink:#1b1f24}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink-ink:#f1f3f5}}
+:root[data-theme="dark"]{--ink-ink:#f1f3f5}
+.paper{position:relative}
+.ink{position:absolute;inset:0;z-index:5;pointer-events:none}
+.ink svg{display:block;width:100%;height:100%;overflow:visible}
+.ink.on{pointer-events:auto;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;cursor:crosshair}
+.ink.on.erase{cursor:cell}
+.ink path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ink path.hl{opacity:.42}
+.ink-pad{position:relative;margin-top:14px;border-top:1px dashed var(--line-strong);color:var(--muted);font-size:12px;font-family:var(--sans)}
+.ink-pad:empty{border-top:0;margin-top:0}
+.ink-pad span{position:absolute;top:6px;right:0}
+body.penmode .sess{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+@media (max-width:1000px){body.penmode .sess{grid-template-columns:1fr}}
+body.penmode.penwide .sess{grid-template-columns:1fr}
+body.penmode.penwide .side{display:none}
+body.penmode .stem{max-width:none}
+body.penmode .stem pre.qcode,body.penmode .codewrap{max-width:max(60%,46ch)}   /* 코드 오른쪽에 쓸 자리를 남긴다 */
+body.penmode{padding-bottom:96px}
+.penbar{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;display:none;gap:3px;align-items:center;max-width:calc(100vw - 16px);overflow-x:auto;padding:6px 8px;background:var(--paper);border:1px solid var(--line-strong);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.18);white-space:nowrap;-webkit-overflow-scrolling:touch}
+.penbar.show{display:flex}
+.penbar button{flex:none;min-height:38px;min-width:38px;padding:4px 10px;border:1px solid transparent;border-radius:8px;background:none;font-size:13px;color:var(--fg);touch-action:manipulation}
+.penbar button.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.penbar button:disabled{opacity:.4}
+.penbar .sep{width:1px;height:26px;background:var(--line);margin:0 3px;flex:none}
+.penbar .sw{width:30px;min-width:30px;height:30px;min-height:30px;border-radius:50%;padding:0;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line-strong)}
+.penbar .sw.on{box-shadow:0 0 0 2px var(--accent)}
+.penbar .c-ink{background:var(--ink-ink)} .penbar .c-orange{background:#e07b00} .penbar .c-blue{background:#2563eb} .penbar .c-red{background:#d93025}
+.penbar .wd{display:inline-block;background:currentColor;border-radius:999px;vertical-align:middle}
+#penBtn.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
