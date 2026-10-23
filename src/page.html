@@ -257,7 +257,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
 .panel-empty{color:var(--muted);font-size:14px;padding:28px 8px;text-align:center;line-height:1.7}
 .feedback{padding:10px 14px;border-radius:var(--radius);font-weight:500;display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;font-size:14.5px}
 .feedback.ok{background:var(--ok-bg);color:var(--ok)} .feedback.no{background:var(--no-bg);color:var(--no)} .feedback.wait{background:var(--paper-2);color:var(--fg)}
-.feedback .ans{font-weight:400;color:var(--fg);min-width:0;overflow-wrap:anywhere}
+.feedback .ans{font-weight:400;color:var(--fg);min-width:0;overflow-wrap:anywhere;white-space:pre-line}
 .feedback .ans b{font-weight:600}
 .selfgrade{display:flex;gap:6px;margin-left:auto}
 .explain{margin-top:14px;font-size:14.5px;line-height:1.7;max-width:76ch;overflow-wrap:anywhere}
@@ -672,7 +672,9 @@ body.penmode{padding-bottom:96px}
     return { ok, per: [ok] };
   }
   const isSelfGraded = (q) => !q.grade || q.grade.t === "self";
-  function answerText(q) { return plainText(String(q.answer || "").replace(/<br\s*\/?>/gi, " / ")); }
+  function answerText(q) { return plainText(String(q.answer || "").replace(/<br\s*\/?>/gi, "\n")); }
+  // 모범답안 표시용: 줄바꿈(\n, <br>)을 살린다
+  const answerHtml = (q) => esc(String(q.answer || "").replace(/<br\s*\/?>/gi, "\n")).replace(/\n/g, "<br>");
 
   /* ================= 세션 (풀이 1회분) ================= */
   let sess = null;
@@ -1054,6 +1056,10 @@ body.penmode{padding-bottom:96px}
     if (S.pen && S.pen.on) $("#penBtn").classList.add("on");
     $("#prevBtn").addEventListener("click", () => move(-1));
     $("#nextBtn").addEventListener("click", () => move(1));
+    // 좌우 스와이프로 문항 이동 (가로 스크롤 상자·입력칸·펜 필기 레이어 위에서는 안 함)
+    let sw = null;
+    app.addEventListener("touchstart", (e) => { if (e.touches.length !== 1) { sw = null; return; } const t = e.target; sw = t.closest(".ink.on, .codewrap, .trace-code, .at, .rt, .cb-t, .cb-order, input, textarea, select, .penbar, .omr, .tout, .hb-sec, .fg-b") ? null : { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() }; }, { passive: true });
+    app.addEventListener("touchend", (e) => { if (!sw) return; const t = e.changedTouches[0]; const dx = t.clientX - sw.x, dy = t.clientY - sw.y, dt = Date.now() - sw.t; sw = null; if (Math.abs(dx) > 80 && Math.abs(dy) < 60 && dt < 800) move(dx < 0 ? 1 : -1); }, { passive: true });
     $("#posSel").addEventListener("change", (e) => jumpTo(Number(e.target.value)));
     $("#exitBtn").addEventListener("click", exitSession);
     $("#omrToggle").addEventListener("click", () => toggleOmr());
@@ -1101,7 +1107,7 @@ body.penmode{padding-bottom:96px}
     const [year, ...rn] = sess.refs[i].round.split("-");
     const tags = q.rate != null ? `<span class="pill num" title="복원 데이터 응시자 정답률">정답률 ${q.rate}%</span>${q.rate < 40 ? '<span class="pill no">킬러</span>' : ""}` : sess.track === "practical" ? `<span class="pill mark">배점 ${q.points || 5}점</span>` : "";
     let html = `<div class="qmeta"><span class="qn">Q.${i + 1}</span><span class="pill num">${year}년</span><span class="pill num">${rn.join("·")}회</span><span class="pill acc">${esc(unitOf(q))}</span>${tags}
-      <button class="markbtn ${S.marks[q.id] ? "on" : ""}" id="markBtn">${S.marks[q.id] ? "★ 저장됨" : "☆ 저장"}</button></div>`;
+      <button class="markbtn" id="copyQBtn" title="문제 본문(코드·보기 포함)을 텍스트로 복사">⧉ 복사</button><button class="markbtn ${S.marks[q.id] ? "on" : ""}" id="markBtn">${S.marks[q.id] ? "★ 저장됨" : "☆ 저장"}</button></div>`;
     html += `<div class="stem">${q.q}</div>`;
     if (sess.track === "written") {
       const order = choiceOrder(q);
@@ -1127,7 +1133,7 @@ body.penmode{padding-bottom:96px}
     if (isOpen) {
       panel += sess.track === "written"
         ? `<div class="feedback wait"><span>정답</span><span class="ans"><b>${CIRCLED[q.ans - 1]}</b> ${plainText(q.choices[q.ans - 1])}</span></div>`
-        : `<div class="feedback wait"><span>모범답안</span><span class="ans">${q.answer}</span></div>`;
+        : `<div class="feedback wait"><span>모범답안</span><span class="ans">${answerHtml(q)}</span></div>`;
       panel += renderExplain(q);
     } else if (revealed) {
       if (sess.track === "written") {
@@ -1136,11 +1142,11 @@ body.penmode{padding-bottom:96px}
       } else {
         const self = isSelfGraded(q);
         if (graded === undefined && self) {
-          panel += `<div class="feedback wait"><span>모범답안</span><span class="ans">${q.answer}</span>
+          panel += `<div class="feedback wait"><span>모범답안</span><span class="ans">${answerHtml(q)}</span>
             <span class="selfgrade"><button class="btn sm" data-self="1">맞음</button><button class="btn sm" data-self="0">틀림</button></span></div>`;
         } else {
           const ok = graded === true;
-          panel += `<div class="feedback ${ok ? "ok" : "no"}"><span>${ok ? "정답" : hasInput(q) ? "오답" : "미응답"}</span><span class="ans">모범답안 <b>${q.answer}</b></span>${!ok && !self ? `<span class="selfgrade"><button class="btn sm ghost" data-self="1" title="표기만 달랐다면 정답으로 처리">정답으로 인정</button></span>` : ""}</div>`;
+          panel += `<div class="feedback ${ok ? "ok" : "no"}"><span>${ok ? "정답" : hasInput(q) ? "오답" : "미응답"}</span><span class="ans">모범답안 <b>${answerHtml(q)}</b></span>${!ok && !self ? `<span class="selfgrade"><button class="btn sm ghost" data-self="1" title="표기만 달랐다면 정답으로 처리">정답으로 인정</button></span>` : ""}</div>`;
         }
       }
       panel += renderExplain(q);
@@ -1162,10 +1168,11 @@ body.penmode{padding-bottom:96px}
     $$("[data-choice]").forEach((b) => b.addEventListener("click", () => choose(Number(b.dataset.choice))));
     $$("[data-elim]").forEach((b) => b.addEventListener("click", () => { const num = Number(b.dataset.elim); const list = sess.elim[q.id] || []; sess.elim[q.id] = list.includes(num) ? list.filter((x) => x !== num) : list.concat(num); persist(); renderQuestion(); }));
     $$("[data-self]").forEach((b) => b.addEventListener("click", () => selfGrade(b.dataset.self === "1")));
-    const ta = $("#shortInput"); if (ta) { ta.addEventListener("input", () => { sess.ans[q.id] = ta.value; persist(); updateOmrCell(i); }); ta.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); checkShort(); } }); }
+    const ta = $("#shortInput"); if (ta) { ta.addEventListener("input", () => { sess.ans[q.id] = ta.value; persist(); updateOmrCell(i); }); ta.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey && !/\n|<br/i.test(String(q.answer || ""))) { e.preventDefault(); checkShort(); } }); }
     $$("#shortMulti input").forEach((inp) => { inp.addEventListener("input", () => { sess.ans[q.id] = $$("#shortMulti input").map((x) => x.value); persist(); updateOmrCell(i); }); inp.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); checkShort(); } }); });
     $$(".tabs button", $("#panel")).forEach((b) => b.addEventListener("click", () => { $$(".tabs button", $("#panel")).forEach((x) => x.classList.toggle("on", x === b)); $("#panel .explain .body").innerHTML = b.dataset.html; $("#panel .explain .note").textContent = b.dataset.note || ""; }));
     $("#copyBtn").addEventListener("click", () => copyQuestion(q, revealed, false));
+    const cq = $("#copyQBtn"); if (cq) cq.addEventListener("click", () => copyQuestion(q, false, false));
     $("#askBtn").addEventListener("click", () => copyQuestion(q, revealed, true));
     highlightIn($("#paper .stem"));
     renderMidActs();
@@ -1188,7 +1195,7 @@ body.penmode{padding-bottom:96px}
       const cls = res ? (res.ok ? "ok" : "no") : "";
       html += `<textarea id="shortInput" class="${cls}" rows="3" spellcheck="false" ${revealed ? "readonly" : ""} placeholder="${isSelfGraded(q) ? "답안을 서술하세요 (모범답안을 보고 직접 채점)" : "답을 적고 Enter (자동 채점)"}">${esc(v || "")}</textarea>`;
     }
-    if (!revealed) html += `<div class="hint">${isSelfGraded(q) ? "서술형은 모범답안을 보고 스스로 채점합니다" : "대소문자·공백·한영 표기 차이는 같은 답으로 봅니다"}</div>`;
+    if (!revealed) html += `<div class="hint">${isSelfGraded(q) ? "서술형은 모범답안을 보고 스스로 채점합니다" : (/\n|<br/i.test(String(q.answer || "")) ? "여러 줄 답: 줄마다 Enter 로 바꿔 적고 정답 확인을 누르세요" : "대소문자·공백·한영 표기 차이는 같은 답으로 봅니다")}</div>`;
     html += `</div>`;
     return html;
   }
@@ -1226,12 +1233,13 @@ body.penmode{padding-bottom:96px}
     } else if (sess.submitted) {
       html = `${last ? "" : `<button class="btn" id="nextBtn2">다음 문제 →</button>`}<button class="btn primary" id="toResultBtn">결과 보기</button>`;
     } else if (!graded) {
-      html = sess.track === "practical" ? `<button class="btn primary" id="checkBtn">정답 확인</button>` : `<span class="hint">보기를 고르면 바로 채점됩니다</span>`;
+      html = (sess.track === "practical" ? `<button class="btn primary" id="checkBtn">정답 확인</button>` : `<span class="hint">보기를 고르면 바로 채점됩니다</span>`) + `<button class="btn ghost" id="revealBtn" title="답을 적지 않고 정답·해설만 본다 (기록에 넣지 않음)">정답 보기</button>`;
     } else {
       html = `<button class="btn" id="retryBtn">다시 풀기</button>` + (last ? `<button class="btn primary" id="finishBtn">마치고 결과 보기</button>` : `<button class="btn primary" id="nextBtn2">다음 문제 →</button>`);
     }
     box.innerHTML = html;
     const cb = $("#checkBtn"); if (cb) cb.addEventListener("click", checkShort);
+    const rv = $("#revealBtn"); if (rv) rv.addEventListener("click", revealAnswer);
     const sb = $("#submitBtn"); if (sb) sb.addEventListener("click", confirmSubmit);
     const rb = $("#toResultBtn"); if (rb) rb.addEventListener("click", () => go("result"));
     const fb = $("#finishBtn"); if (fb) fb.addEventListener("click", () => { sess.submitted = true; persist(); go("result"); });
@@ -1256,7 +1264,7 @@ body.penmode{padding-bottom:96px}
       const ex = q.explain || {}; const body = ex.mine || ex.user || ex.ai;
       if (body && !ask) lines.push("", "해설: " + plainText(body));
     }
-    if (ask) lines.push("", "위 문제의 상세 해설을 아래 형식으로 작성해 주세요.", "1. 핵심 개념: 문제 풀이에 필요한 개념을 중학생도 이해할 수 있는 비유와 함께 설명", "2. 보기별 정오 판단: 각 보기가 맞거나 틀린 근거", "3. 관련 키워드 표: 함께 외워야 할 용어를 표로 정리", "4. 암기법: 쉽게 기억하는 방법 한 줄", "5. 복습 문제: 같은 개념을 묻는 변형 문제 2개 (정답은 마지막에 따로)");
+    if (ask) lines.push("", "위 문제의 상세 해설을 아래 형식으로 작성해 주세요.", "1. 핵심 개념: 문제 풀이에 필요한 개념을 중학생도 이해할 수 있는 비유와 함께 설명", "2. 보기별 정오 판단: 각 보기가 맞거나 틀린 근거", "3. 관련 키워드 표: 함께 외워야 할 용어를 표로 정리", "4. 암기법: 쉽게 기억하는 방법 한 줄");
     copyText(lines.join("\n"), ask ? "AI 채팅에 붙여 넣을 요청문을 복사했어요" : "문제를 클립보드에 복사했어요");
   }
 
@@ -1274,6 +1282,12 @@ body.penmode{padding-bottom:96px}
     const ok = num === q.ans;
     sess.graded[q.id] = ok;
     recordAnswer(sess.track, sess.refs[sess.idx].round, q, ok);
+    persist(); renderQuestion(); updateOmrCell(sess.idx);
+  }
+  // 답을 적지 않고 정답만 본다: 채점 기록(정답률·오답노트)에는 넣지 않는다
+  function revealAnswer() {
+    const q = curQ(); if (sess.mode !== "practice" || sess.graded[q.id] !== undefined) return;
+    sess.graded[q.id] = null; if (sess.selfPending) delete sess.selfPending[q.id];
     persist(); renderQuestion(); updateOmrCell(sess.idx);
   }
   function checkShort() {
@@ -2225,7 +2239,7 @@ body.penmode{padding-bottom:96px}
       if (t.matches("input, textarea, select")) t.focus(); else t.click();
     },
     bind(box) {
-      let drawing = null, scroll = null;
+      let drawing = null;
       const pos = (ev) => { const r = box.getBoundingClientRect(); return [ev.clientX - r.left, ev.clientY - r.top]; };
       box.addEventListener("pointerdown", (e) => {
         const cfg = this.cfg(); if (!cfg.on) return;
@@ -2238,10 +2252,9 @@ body.penmode{padding-bottom:96px}
           if (cfg.tool === "erase") { this.push(); drawing = { id: e.pointerId, erase: true, hit: this.eraseAt(x, y) }; return; }
           const st = { t: cfg.tool, c: cfg.tool === "hl" ? "hl" : cfg.color, w: cfg.tool === "hl" ? cfg.width * 7 : cfg.width, p: [x / this.W(), y / this.W()] };
           const path = this.pathEl(st); this.svg.appendChild(path);
-          drawing = { id: e.pointerId, st, path, last: [x, y], mouse: e.pointerType === "mouse", t0: Date.now(), cx: e.clientX, cy: e.clientY };
-        } else if (e.pointerType === "touch" && !drawing) {
-          try { box.setPointerCapture(e.pointerId); } catch (err) {}
-          scroll = { id: e.pointerId, x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY, t: Date.now(), moved: false };
+          drawing = { id: e.pointerId, st, path, last: [x, y], mouse: e.pointerType !== "touch", t0: Date.now(), cx: e.clientX, cy: e.clientY };
+        } else if (e.pointerType === "touch") {
+          e.preventDefault();   // 손(손바닥·손가락)은 아예 무시: 그리지도, 스크롤하지도, 누르지도 않는다
         }
       });
       box.addEventListener("pointermove", (e) => {
@@ -2254,21 +2267,14 @@ body.penmode{padding-bottom:96px}
             drawing.st.p.push(x / this.W(), y / this.W()); drawing.last = [x, y];
           }
           if (!drawing.erase) drawing.path.setAttribute("d", this.d(drawing.st));
-        } else if (scroll && e.pointerId === scroll.id) {
-          const dx = e.clientX - scroll.x, dy = e.clientY - scroll.y; scroll.x = e.clientX; scroll.y = e.clientY;
-          if (Math.hypot(e.clientX - scroll.sx, e.clientY - scroll.sy) > 8) scroll.moved = true;
-          if (scroll.moved) window.scrollBy(-dx, -dy);
         }
       });
       const end = (e) => {
         if (drawing && e.pointerId === drawing.id) {
           if (drawing.erase) { if (!drawing.hit) this.hist.pop(); else this.save(); }
-          else if (drawing.mouse && drawing.st.p.length <= 4 && Date.now() - drawing.t0 < 300) { drawing.path.remove(); this.tapThrough(drawing.cx, drawing.cy); }   // 마우스 '클릭'은 그리지 않고 아래 버튼으로 넘긴다
+          else if (drawing.mouse && drawing.st.p.length <= 3 && Date.now() - drawing.t0 < 250) { drawing.path.remove(); this.tapThrough(drawing.cx, drawing.cy); }   // 마우스·펜슬 '톡'은 그리지 않고 아래 버튼으로 넘긴다
           else { this.push(); this.rec().s.push(drawing.st); this.save(); }
           drawing = null; this.syncBar();
-        } else if (scroll && e.pointerId === scroll.id) {
-          if (!scroll.moved && Date.now() - scroll.t < 500) this.tapThrough(e.clientX, e.clientY);
-          scroll = null;
         }
       };
       box.addEventListener("pointerup", end); box.addEventListener("pointercancel", end);
@@ -2280,7 +2286,7 @@ body.penmode{padding-bottom:96px}
         ${["ink", "orange", "blue", "red"].map((k) => `<button class="sw c-${k} ${c.color === k ? "on" : ""}" data-color="${k}" title="${{ ink: "기본", orange: "주황", blue: "파랑", red: "빨강" }[k]}"></button>`).join("")}<span class="sep"></span>
         ${[[1.4, 6], [2.2, 9], [3.6, 13]].map(([w, px]) => `<button data-width="${w}" class="${Math.abs(c.width - w) < .01 ? "on" : ""}" title="굵기"><i class="wd" style="width:${px}px;height:${px}px"></i></button>`).join("")}<span class="sep"></span>
         <button data-act="undo" title="되돌리기">↶</button><button data-act="redo" title="다시 실행">↷</button><button data-act="clear">모두 지우기</button><span class="sep"></span>
-        <button data-act="pad">여백 +</button><button data-act="finger" class="${c.finger ? "on" : ""}" title="손가락으로도 그리기 (끄면 손가락은 스크롤·탭)">손가락 쓰기</button><button data-act="wide" class="${c.wide ? "on" : ""}" title="해설 패널을 숨겨 카드를 넓게">넓게</button><span class="sep"></span>
+        <button data-act="up" title="위로 스크롤">↑</button><button data-act="down" title="아래로 스크롤">↓</button><button data-act="pad">여백 +</button><button data-act="finger" class="${c.finger ? "on" : ""}" title="손가락으로도 그리기 (끄면 카드 위의 손 터치는 전부 무시)">손가락 쓰기</button><button data-act="wide" class="${c.wide ? "on" : ""}" title="해설 패널을 숨겨 카드를 넓게">넓게</button><span class="sep"></span>
         <button data-act="off">✕ 펜 끄기</button>`;
     },
     syncBar() {
@@ -2304,6 +2310,7 @@ body.penmode{padding-bottom:96px}
       else if (b.dataset.act === "undo") return this.undo();
       else if (b.dataset.act === "redo") return this.redoFn();
       else if (b.dataset.act === "clear") return this.clear();
+      else if (b.dataset.act === "up" || b.dataset.act === "down") { window.scrollBy({ top: (b.dataset.act === "up" ? -1 : 1) * window.innerHeight * 0.7, behavior: "smooth" }); return; }
       else if (b.dataset.act === "pad") { const r = this.rec(); r.pad = Math.max(280, r.pad) + 240; this.save(); const pad = $("#paper .ink-pad"); if (pad) pad.style.height = r.pad + "px"; return; }
       else if (b.dataset.act === "finger") c.finger = !c.finger;
       else if (b.dataset.act === "wide") { c.wide = !c.wide; document.body.classList.toggle("penwide", c.wide); }

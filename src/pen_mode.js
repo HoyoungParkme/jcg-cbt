@@ -70,7 +70,7 @@
       if (t.matches("input, textarea, select")) t.focus(); else t.click();
     },
     bind(box) {
-      let drawing = null, scroll = null;
+      let drawing = null;
       const pos = (ev) => { const r = box.getBoundingClientRect(); return [ev.clientX - r.left, ev.clientY - r.top]; };
       box.addEventListener("pointerdown", (e) => {
         const cfg = this.cfg(); if (!cfg.on) return;
@@ -83,10 +83,9 @@
           if (cfg.tool === "erase") { this.push(); drawing = { id: e.pointerId, erase: true, hit: this.eraseAt(x, y) }; return; }
           const st = { t: cfg.tool, c: cfg.tool === "hl" ? "hl" : cfg.color, w: cfg.tool === "hl" ? cfg.width * 7 : cfg.width, p: [x / this.W(), y / this.W()] };
           const path = this.pathEl(st); this.svg.appendChild(path);
-          drawing = { id: e.pointerId, st, path, last: [x, y], mouse: e.pointerType === "mouse", t0: Date.now(), cx: e.clientX, cy: e.clientY };
-        } else if (e.pointerType === "touch" && !drawing) {
-          try { box.setPointerCapture(e.pointerId); } catch (err) {}
-          scroll = { id: e.pointerId, x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY, t: Date.now(), moved: false };
+          drawing = { id: e.pointerId, st, path, last: [x, y], mouse: e.pointerType !== "touch", t0: Date.now(), cx: e.clientX, cy: e.clientY };
+        } else if (e.pointerType === "touch") {
+          e.preventDefault();   // 손(손바닥·손가락)은 아예 무시: 그리지도, 스크롤하지도, 누르지도 않는다
         }
       });
       box.addEventListener("pointermove", (e) => {
@@ -99,21 +98,14 @@
             drawing.st.p.push(x / this.W(), y / this.W()); drawing.last = [x, y];
           }
           if (!drawing.erase) drawing.path.setAttribute("d", this.d(drawing.st));
-        } else if (scroll && e.pointerId === scroll.id) {
-          const dx = e.clientX - scroll.x, dy = e.clientY - scroll.y; scroll.x = e.clientX; scroll.y = e.clientY;
-          if (Math.hypot(e.clientX - scroll.sx, e.clientY - scroll.sy) > 8) scroll.moved = true;
-          if (scroll.moved) window.scrollBy(-dx, -dy);
         }
       });
       const end = (e) => {
         if (drawing && e.pointerId === drawing.id) {
           if (drawing.erase) { if (!drawing.hit) this.hist.pop(); else this.save(); }
-          else if (drawing.mouse && drawing.st.p.length <= 4 && Date.now() - drawing.t0 < 300) { drawing.path.remove(); this.tapThrough(drawing.cx, drawing.cy); }   // 마우스 '클릭'은 그리지 않고 아래 버튼으로 넘긴다
+          else if (drawing.mouse && drawing.st.p.length <= 3 && Date.now() - drawing.t0 < 250) { drawing.path.remove(); this.tapThrough(drawing.cx, drawing.cy); }   // 마우스·펜슬 '톡'은 그리지 않고 아래 버튼으로 넘긴다
           else { this.push(); this.rec().s.push(drawing.st); this.save(); }
           drawing = null; this.syncBar();
-        } else if (scroll && e.pointerId === scroll.id) {
-          if (!scroll.moved && Date.now() - scroll.t < 500) this.tapThrough(e.clientX, e.clientY);
-          scroll = null;
         }
       };
       box.addEventListener("pointerup", end); box.addEventListener("pointercancel", end);
@@ -125,7 +117,7 @@
         ${["ink", "orange", "blue", "red"].map((k) => `<button class="sw c-${k} ${c.color === k ? "on" : ""}" data-color="${k}" title="${{ ink: "기본", orange: "주황", blue: "파랑", red: "빨강" }[k]}"></button>`).join("")}<span class="sep"></span>
         ${[[1.4, 6], [2.2, 9], [3.6, 13]].map(([w, px]) => `<button data-width="${w}" class="${Math.abs(c.width - w) < .01 ? "on" : ""}" title="굵기"><i class="wd" style="width:${px}px;height:${px}px"></i></button>`).join("")}<span class="sep"></span>
         <button data-act="undo" title="되돌리기">↶</button><button data-act="redo" title="다시 실행">↷</button><button data-act="clear">모두 지우기</button><span class="sep"></span>
-        <button data-act="pad">여백 +</button><button data-act="finger" class="${c.finger ? "on" : ""}" title="손가락으로도 그리기 (끄면 손가락은 스크롤·탭)">손가락 쓰기</button><button data-act="wide" class="${c.wide ? "on" : ""}" title="해설 패널을 숨겨 카드를 넓게">넓게</button><span class="sep"></span>
+        <button data-act="up" title="위로 스크롤">↑</button><button data-act="down" title="아래로 스크롤">↓</button><button data-act="pad">여백 +</button><button data-act="finger" class="${c.finger ? "on" : ""}" title="손가락으로도 그리기 (끄면 카드 위의 손 터치는 전부 무시)">손가락 쓰기</button><button data-act="wide" class="${c.wide ? "on" : ""}" title="해설 패널을 숨겨 카드를 넓게">넓게</button><span class="sep"></span>
         <button data-act="off">✕ 펜 끄기</button>`;
     },
     syncBar() {
@@ -149,6 +141,7 @@
       else if (b.dataset.act === "undo") return this.undo();
       else if (b.dataset.act === "redo") return this.redoFn();
       else if (b.dataset.act === "clear") return this.clear();
+      else if (b.dataset.act === "up" || b.dataset.act === "down") { window.scrollBy({ top: (b.dataset.act === "up" ? -1 : 1) * window.innerHeight * 0.7, behavior: "smooth" }); return; }
       else if (b.dataset.act === "pad") { const r = this.rec(); r.pad = Math.max(280, r.pad) + 240; this.save(); const pad = $("#paper .ink-pad"); if (pad) pad.style.height = r.pad + "px"; return; }
       else if (b.dataset.act === "finger") c.finger = !c.finger;
       else if (b.dataset.act === "wide") { c.wide = !c.wide; document.body.classList.toggle("penwide", c.wide); }
