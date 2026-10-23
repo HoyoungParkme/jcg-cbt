@@ -5,7 +5,7 @@ def rep(old, new):
     global s
     assert s.count(old) == 1, old[:70]; s = s.replace(old, new)
 css = open("src/trace_viewer.css", encoding="utf-8").read() + open("src/pen_mode.css", encoding="utf-8").read() + open("src/calc_board.css", encoding="utf-8").read()
-js = open("src/trace_viewer.js", encoding="utf-8").read() + open("src/pen_mode.js", encoding="utf-8").read() + open("src/calc_board.js", encoding="utf-8").read()
+js = open("src/trace_viewer.js", encoding="utf-8").read() + open("src/pen_mode.js", encoding="utf-8").read() + open("src/calc_board.js", encoding="utf-8").read() + open("src/sql_trace.js", encoding="utf-8").read()
 a = s.index("/* ---------- 실행 추적 뷰어 ---------- */"); b = s.index("</style>", a); s = s[:a] + css + s[b:]
 a = s.index("  /* ================= 실행 추적 뷰어 ================= */"); b = s.index("  /* ================= 키보드 ================= */", a); s = s[:a] + js + s[b:]
 # 펜 모드 연결: 머리글 버튼 + 툴바, 문제 카드가 그려질 때 덧씌우기, 화면을 떠나면 레이아웃 원복

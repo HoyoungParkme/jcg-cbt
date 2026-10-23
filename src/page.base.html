@@ -430,6 +430,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
   <nav class="nav" id="nav">
     <button data-view="home" class="on">홈</button>
     <button data-view="notes">요약노트</button>
+    <button data-view="sql">SQL 판</button>
     <button data-view="wrong">오답노트</button>
     <button data-view="marks">북마크</button>
   </nav>
@@ -662,7 +663,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
     stopTimer();
     $$("#nav button").forEach((b) => b.classList.toggle("on", b.dataset.view === v));
     window.scrollTo({ top: 0 });
-    ({ home: renderHome, rounds: renderRounds, units: renderUnits, session: renderSession, result: renderResult, notes: renderNotesView,
+    ({ home: renderHome, rounds: renderRounds, units: renderUnits, session: renderSession, result: renderResult, notes: renderNotesView, sql: renderSqlView,
        wrong: () => renderNotes("wrong"), marks: () => renderNotes("marks") }[v] || renderHome)();
   }
   $("#nav").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) go(b.dataset.view); });
