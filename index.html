@@ -220,6 +220,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
 .stem .q-tbl-title{font-size:12.5px;color:var(--muted);margin-bottom:2px}
 .stem pre,.stem .q-sql,.explain pre{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin:8px 0;font-family:var(--mono);font-size:13.5px;line-height:1.55;overflow-x:auto;white-space:pre;tab-size:4;font-weight:400}
 .stem .q-sql code,.stem pre code{font-family:var(--mono);white-space:pre}
+.stem pre.prose,.explain pre.prose{white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:visible;font-family:var(--sans);font-size:14px;line-height:1.65} .stem pre.prose code{font-family:var(--sans);white-space:pre-wrap}   /* 지문 상자: 가로 스크롤 대신 줄바꿈 */
 .stem code{font-family:var(--mono);font-size:.95em}
 .stem img{display:block;margin:8px 0;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
 .codewrap{display:flex;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;margin:8px 0;font-weight:400}
@@ -1514,6 +1515,12 @@ body.penmode{padding-bottom:96px}
       let lang = langM && langM[1] ? langM[1] : null;
       if (lang === "py") lang = "python";
       const text = (codeEl || pre).textContent.replace(/\r\n?/g, "\n").replace(/\n+$/, "");
+      // 코드가 아니라 지문(글)인 상자: 한글 줄이 절반 이상이고 코드 문법(중괄호·세미콜론·연산자·예약어)이 없으면 글로 본다
+      const textLines = text.split("\n").filter((l) => l.trim());
+      const hangulLines = textLines.filter((l) => /[가-힣]/.test(l)).length;
+      const codeSyntax = /[{};]|==|\+\+|printf|print\(|#include|\b(SELECT|CREATE|INSERT|UPDATE|DELETE|def|class|public|int|void|for|while|if)\b/i.test(text);
+      const looksLikeProse = !lang && hangulLines >= Math.ceil(textLines.length / 2) && !codeSyntax;
+      if (looksLikeProse) { pre.classList.add("prose"); pre.dataset.done = "1"; return; }   // 줄 번호 없이, 줄바꿈되는 글 상자로
       const looksLikeCode = /[{};=()<>]/.test(text) && text.split("\n").length >= 2;
       if (!looksLikeCode && !lang) return;
       pre.dataset.done = "1";
