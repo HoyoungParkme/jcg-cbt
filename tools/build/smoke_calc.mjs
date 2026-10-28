@@ -1,5 +1,5 @@
 // 계산 풀이 판 확인: 문항을 열어 #calc 를 캡처하고 읽은 값·답 줄을 찍는다
-import { chromium } from "/opt/node22/lib/node_modules/playwright/index.mjs";
+import { chromium } from "playwright";
 const base = "http://127.0.0.1:8765/index.html";
 const ids = JSON.parse(process.argv[2]);
 const browser = await chromium.launch();

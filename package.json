@@ -1,0 +1,13 @@
+{
+  "name": "jcg-cbt",
+  "private": true,
+  "type": "module",
+  "description": "정처기 기출 데스크 빌드 점검용 (앱 자체는 의존성 없는 정적 파일)",
+  "scripts": {
+    "build": "python3 tools/build/splice.py",
+    "check": "node tools/build/harness.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  }
+}

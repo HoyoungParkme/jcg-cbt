@@ -1,8 +1,8 @@
 """원본 사이트 API(문제·정답·단원) + 깃허브(해설·정답률·자동채점 규칙)를 합쳐 앱 데이터로 변환한다."""
 import json, glob, re, os, sys, collections
-SITE = "/tmp/claude-0/-home-user/f7c29923-b2f5-54e7-8995-a1127eb54dd7/scratchpad/site/api"
-GH = "/tmp/claude-0/-home-user/f7c29923-b2f5-54e7-8995-a1127eb54dd7/scratchpad/upstream/data"
-OUT = "/home/user/jcg-cbt/data"
+# 사용법: python3 tools/build/convert_site.py <사이트 API 덤프 폴더> <hj0304/cert 의 data 폴더>
+SITE, GH = sys.argv[1], sys.argv[2]
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data")
 
 def plain(h):
     s = re.sub(r"<[^>]+>", " ", str(h or ""))

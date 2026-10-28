@@ -63,4 +63,6 @@ data/trace/           실기 코드 문항의 실행 추적 (135개, 문항을 �
 ## 빌드 (저장소 루트에서)
 - `python3 tools/build/splice.py` : src/page.base.html + src/*.js·css → src/page.html → index.html
 - 추적 데이터: `tools/trace/` 의 prep.py → run_all.py → trace_all.py (gcc·gdb·java·python3 필요). 결과는 data/trace/
+- 점검 준비 (처음 한 번): `npm install && npx playwright install chromium`
 - 점검: `node tools/build/harness.mjs` (판 생성 전 단계 무오류), `node tools/build/smoke_*.mjs` (Playwright, 로컬 서버 `python3 -m http.server 8765` 필요)
+  - `smoke_session.mjs` : 세션 흐름 회귀 점검 (스와이프 한 번에 한 문항, 끝낸 회독이 되살아나지 않음, `정답 보기` 판정). 실패하면 종료 코드 1

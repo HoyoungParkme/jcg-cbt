@@ -1,9 +1,9 @@
 // 뷰어의 판 만들기 함수를 브라우저 없이 모든 추적 데이터에 돌려서 예외·속도를 확인한다
 import fs from "fs"; import vm from "vm";
-const js = fs.readFileSync("trace_viewer.js", "utf8");
+const js = fs.readFileSync("src/trace_viewer.js", "utf8");
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const factory = new Function("window", "document", "S", "Store", "esc", "$", "$$", js + "\nreturn { expandTrace, codeInfo, addrInfo, buildBoard, boardHtml, describeBoard, lineNotes };");
-const dir = "/home/user/jcg-cbt/data/trace"; let bad = 0, total = 0, slow = [];
+const dir = "data/trace"; let bad = 0, total = 0, slow = [];
 for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".js") && f !== "index.js")) {
   const sandbox = { window: {} }; vm.runInNewContext(fs.readFileSync(dir + "/" + f, "utf8"), sandbox);
   const id = f.slice(0, -3); const c = sandbox.window.CBT_TRACE[id];

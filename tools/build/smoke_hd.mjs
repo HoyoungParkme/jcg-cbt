@@ -1,5 +1,5 @@
 // 흥달쌤식 손풀이 판 확인: 문항별로 특정 단계까지 가서 추적 영역만 캡처한다
-import { chromium } from "/opt/node22/lib/node_modules/playwright/index.mjs";
+import { chromium } from "playwright";
 const base = "http://127.0.0.1:8765/index.html";
 const targets = JSON.parse(process.argv[2]);   // [[id, stepIndex|"last"|"half"], ...]
 const browser = await chromium.launch();

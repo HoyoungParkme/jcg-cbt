@@ -2,7 +2,7 @@
 import json, subprocess, os, sys, re, collections
 from compress import compress
 from post import postprocess
-OUT = "/home/user/jcg-cbt/data/trace"; os.makedirs(OUT, exist_ok=True)
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "trace"); os.makedirs(OUT, exist_ok=True)
 metas = json.load(open("build/meta.json", encoding="utf-8"))
 results = {r["id"]: r for r in json.load(open("run_results.json", encoding="utf-8"))}
 env = dict(os.environ); env.pop("JAVA_TOOL_OPTIONS", None)

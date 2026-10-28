@@ -1,5 +1,5 @@
 // 펜 모드 확인: 펜슬(pointerType pen) 합성 이벤트로 획을 긋고, 저장·복원·손가락 탭 통과·레이아웃을 본다
-import { chromium } from "/opt/node22/lib/node_modules/playwright/index.mjs";
+import { chromium } from "playwright";
 const base = "http://127.0.0.1:8765/index.html";
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1180, height: 820 }, hasTouch: true });   // 아이패드 가로

@@ -720,6 +720,12 @@ body.penmode{padding-bottom:96px}
     if (Array.isArray(v)) return v.some((x) => String(x || "").trim());
     return v !== undefined && v !== null && String(v).trim() !== "";
   }
+  // 채점 결과 표시. graded: true 정답 / false 오답 / null '정답 보기'로 채점 없이 정답만 봄 (undefined 는 아직 채점 전이라 여기 오지 않는다)
+  function verdictOf(q, graded) {
+    if (graded === true) return { cls: "ok", label: "정답" };
+    if (graded === null) return { cls: "wait", label: "정답만 봄" };
+    return { cls: "no", label: hasInput(q) ? "오답" : "미응답" };
+  }
   function scoreSession() {
     const by = {}; let total = 0, correct = 0, pendingSelf = 0, pts = 0, ptsTotal = 0;
     sess.refs.forEach((r) => {
@@ -1082,10 +1088,6 @@ body.penmode{padding-bottom:96px}
     if (S.pen && S.pen.on) $("#penBtn").classList.add("on");
     $("#prevBtn").addEventListener("click", () => move(-1));
     $("#nextBtn").addEventListener("click", () => move(1));
-    // 좌우 스와이프로 문항 이동 (가로 스크롤 상자·입력칸·펜 필기 레이어 위에서는 안 함)
-    let sw = null;
-    app.addEventListener("touchstart", (e) => { if (e.touches.length !== 1) { sw = null; return; } const t = e.target; sw = t.closest(".ink.on, .codewrap, .trace-code, .at, .rt, .cb-t, .cb-order, input, textarea, select, .penbar, .omr, .tout, .hb-sec, .fg-b") ? null : { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() }; }, { passive: true });
-    app.addEventListener("touchend", (e) => { if (!sw) return; const t = e.changedTouches[0]; const dx = t.clientX - sw.x, dy = t.clientY - sw.y, dt = Date.now() - sw.t; sw = null; if (Math.abs(dx) > 80 && Math.abs(dy) < 60 && dt < 800) move(dx < 0 ? 1 : -1); }, { passive: true });
     $("#posSel").addEventListener("change", (e) => jumpTo(Number(e.target.value)));
     $("#exitBtn").addEventListener("click", exitSession);
     $("#omrToggle").addEventListener("click", () => toggleOmr());
@@ -1100,6 +1102,8 @@ body.penmode{padding-bottom:96px}
     o.classList.toggle("open", open); b.classList.toggle("open", open);
   }
   function backView() { return sess.kind === "unit" ? "units" : sess.kind === "round" ? "rounds" : "home"; }
+  // 세션을 완전히 끝낸다. 저장본만 비우면 메모리의 sess 가 탭 전환·새로고침 때 다시 저장되므로 둘 다 비운다. 돌아갈 화면을 돌려준다
+  function endSession() { const back = backView(); sess = null; S.session = null; Store.save(); return back; }
   function exitSession() {
     if (sess.mode === "exam" && !sess.submitted) {
       const b = $("#exitBtn");
@@ -1108,7 +1112,8 @@ body.penmode{padding-bottom:96px}
       setTimeout(() => { if (b.isConnected) { delete b.dataset.armed; b.textContent = "← 중단"; b.classList.add("ghost"); } }, 3000);
       return;
     }
-    if (sess.submitted) { S.session = null; Store.save(); } else pauseAndSave();
+    if (sess.submitted) { go(endSession()); return; }
+    pauseAndSave();
     go(backView());
   }
   function persist() { if (!sess.submitted) S.session = sess; Store.save(); }
@@ -1163,16 +1168,16 @@ body.penmode{padding-bottom:96px}
       panel += renderExplain(q);
     } else if (revealed) {
       if (sess.track === "written") {
-        const ok = graded === true;
-        panel += `<div class="feedback ${ok ? "ok" : "no"}"><span>${ok ? "정답" : sess.ans[q.id] ? "오답" : "미응답"}</span><span class="ans">정답 <b>${CIRCLED[q.ans - 1]}</b> ${plainText(q.choices[q.ans - 1])}</span></div>`;
+        const v = verdictOf(q, graded);
+        panel += `<div class="feedback ${v.cls}"><span>${v.label}</span><span class="ans">정답 <b>${CIRCLED[q.ans - 1]}</b> ${plainText(q.choices[q.ans - 1])}</span></div>`;
       } else {
         const self = isSelfGraded(q);
         if (graded === undefined && self) {
           panel += `<div class="feedback wait"><span>모범답안</span><span class="ans">${answerHtml(q)}</span>
             <span class="selfgrade"><button class="btn sm" data-self="1">맞음</button><button class="btn sm" data-self="0">틀림</button></span></div>`;
         } else {
-          const ok = graded === true;
-          panel += `<div class="feedback ${ok ? "ok" : "no"}"><span>${ok ? "정답" : hasInput(q) ? "오답" : "미응답"}</span><span class="ans">모범답안 <b>${answerHtml(q)}</b></span>${!ok && !self ? `<span class="selfgrade"><button class="btn sm ghost" data-self="1" title="표기만 달랐다면 정답으로 처리">정답으로 인정</button></span>` : ""}</div>`;
+          const v = verdictOf(q, graded);
+          panel += `<div class="feedback ${v.cls}"><span>${v.label}</span><span class="ans">모범답안 <b>${answerHtml(q)}</b></span>${graded === false && !self ? `<span class="selfgrade"><button class="btn sm ghost" data-self="1" title="표기만 달랐다면 정답으로 처리">정답으로 인정</button></span>` : ""}</div>`;
         }
       }
       panel += renderExplain(q);
@@ -1208,7 +1213,7 @@ body.penmode{padding-bottom:96px}
 
   function renderShortInputs(q, revealed) {
     const g = q.grade || {}, v = sess.ans[q.id];
-    const res = revealed && !isSelfGraded(q) && hasInput(q) ? gradeShort(q, v) : null;
+    const res = revealed && sess.graded[q.id] !== null && !isSelfGraded(q) && hasInput(q) ? gradeShort(q, v) : null;   // 정답만 본 답은 채점 색을 칠하지 않는다
     let html = `<div class="short"><div class="short-label">정답 입력</div>`;
     if (g.t === "multi") {
       html += `<div id="shortMulti" style="display:flex;flex-direction:column;gap:6px">`;
@@ -1253,7 +1258,7 @@ body.penmode{padding-bottom:96px}
     if (sess.mode === "open") {
       html = last ? `<button class="btn primary" id="doneBtn">회독 마치기</button>` : `<button class="btn primary" id="nextBtn2">다음 문제 →</button>`;
     } else if (isExam && !sess.submitted) {
-      const answered = sess.refs.filter((r) => { const qq = Data.get(sess.track, r.round, r.id); return qq && hasInputFor(qq); }).length;
+      const answered = sess.refs.filter((r) => { const qq = Data.get(sess.track, r.round, r.id); return qq && hasInput(qq); }).length;
       html += last ? "" : `<button class="btn primary" id="nextBtn2">다음 문제 →</button>`;
       html += `<button class="btn ${last ? "primary" : "ghost"}" id="submitBtn">제출하고 채점 <span class="num">(${answered}/${sess.refs.length})</span></button>`;
     } else if (sess.submitted) {
@@ -1269,7 +1274,7 @@ body.penmode{padding-bottom:96px}
     const sb = $("#submitBtn"); if (sb) sb.addEventListener("click", confirmSubmit);
     const rb = $("#toResultBtn"); if (rb) rb.addEventListener("click", () => go("result"));
     const fb = $("#finishBtn"); if (fb) fb.addEventListener("click", () => { sess.submitted = true; persist(); go("result"); });
-    const db = $("#doneBtn"); if (db) db.addEventListener("click", () => { S.session = null; Store.save(); go(backView()); toast("회독을 마쳤어요"); });
+    const db = $("#doneBtn"); if (db) db.addEventListener("click", () => { go(endSession()); toast("회독을 마쳤어요"); });
     const nb = $("#nextBtn2"); if (nb) nb.addEventListener("click", () => move(1));
     const rt = $("#retryBtn"); if (rt) rt.addEventListener("click", retryQuestion);
   }
@@ -1279,7 +1284,6 @@ body.penmode{padding-bottom:96px}
     delete sess.ans[q.id]; delete sess.graded[q.id]; if (sess.selfPending) delete sess.selfPending[q.id];
     persist(); renderQuestion(); updateOmrCell(sess.idx);
   }
-  function hasInputFor(q) { const v = sess.ans[q.id]; return Array.isArray(v) ? v.some((x) => String(x || "").trim()) : v !== undefined && v !== null && String(v).trim() !== ""; }
 
   // 문제·정답·해설을 텍스트로 복사. ask=true 면 AI 채팅용 요청문을 앞에 붙인다
   function copyQuestion(q, revealed, ask) {
@@ -1350,7 +1354,7 @@ body.penmode{padding-bottom:96px}
   let submitArmed = false;
   function confirmSubmit() {
     const b = $("#submitBtn"); if (!b) return;
-    const unanswered = sess.refs.filter((r) => { const q = Data.get(sess.track, r.round, r.id); return q && !hasInputFor(q); }).length;
+    const unanswered = sess.refs.filter((r) => { const q = Data.get(sess.track, r.round, r.id); return q && !hasInput(q); }).length;
     if (!submitArmed && unanswered) { submitArmed = true; b.textContent = `미응답 ${unanswered}문항, 그래도 제출 (다시 누르기)`; setTimeout(() => { submitArmed = false; if (b.isConnected) renderMidActs(); }, 3500); return; }
     submitArmed = false; submitExam();
   }
@@ -1361,8 +1365,8 @@ body.penmode{padding-bottom:96px}
       const q = Data.get(sess.track, r.round, r.id); if (!q) return;
       let ok = null;
       if (sess.track === "written") ok = sess.ans[q.id] === q.ans;
-      else if (!isSelfGraded(q)) ok = hasInputFor(q) ? gradeShort(q, sess.ans[q.id]).ok : false;
-      else if (!hasInputFor(q)) ok = false;
+      else if (!isSelfGraded(q)) ok = hasInput(q) ? gradeShort(q, sess.ans[q.id]).ok : false;
+      else if (!hasInput(q)) ok = false;
       if (ok !== null) { sess.graded[q.id] = ok; recordAnswer(sess.track, r.round, q, ok); }
     });
     const sc = scoreSession();
@@ -1393,13 +1397,13 @@ body.penmode{padding-bottom:96px}
     const isExam = sess.mode === "exam", g = sess.graded[q.id];
     let cls = [];
     if (sess.mode === "open") { if (i < (sess.seen || 0)) cls.push("a"); }
-    else if (isExam && !sess.submitted) { if (hasInputFor(q)) cls.push("a"); }
-    else if (g === true) cls.push("o"); else if (g === false) cls.push("x"); else if (hasInputFor(q)) cls.push("a");
+    else if (isExam && !sess.submitted) { if (hasInput(q)) cls.push("a"); }
+    else if (g === true) cls.push("o"); else if (g === false) cls.push("x"); else if (hasInput(q)) cls.push("a");
     if (S.marks[q.id]) cls.push("m");
     if (i === sess.idx) cls.push("cur");
     return cls.join(" ");
   }
-  function answeredCount() { return sess.mode === "open" ? Math.min(sess.seen || 0, sess.refs.length) : sess.refs.filter((r, i) => { const q = questionAt(i); return q && (sess.graded[q.id] !== undefined || hasInputFor(q)); }).length; }
+  function answeredCount() { return sess.mode === "open" ? Math.min(sess.seen || 0, sess.refs.length) : sess.refs.filter((r, i) => { const q = questionAt(i); return q && (sess.graded[q.id] !== undefined || hasInput(q)); }).length; }
   function renderOmr() {
     const o = $("#omr"); if (!o) return;
     const isExam = sess.mode === "exam", isOpen = sess.mode === "open";
@@ -1453,11 +1457,11 @@ body.penmode{padding-bottom:96px}
     html += `<div><div class="section-head"><h2 style="font-size:15px">${wrongs.length ? `틀린 문제 ${wrongs.length}문항` : "틀린 문제가 없습니다"}</h2>${wrongs.length ? `<p>눌러서 해설을 확인하세요. 오답노트에 자동으로 담겼습니다.</p>` : ""}</div><div class="wronglist">`;
     wrongs.forEach((w) => {
       const g = sess.graded[w.q.id];
-      html += `<button class="witem" data-i="${w.i}"><span class="no">${Data.roundLabel(sess.track, w.round)} ${w.q.no}번</span><span class="q">${esc(plainText(w.q.q))}</span><span class="tag">${g === undefined ? "자가채점 대기" : hasInputFor(w.q) ? "오답" : "미응답"}</span></button>`;
+      html += `<button class="witem" data-i="${w.i}"><span class="no">${Data.roundLabel(sess.track, w.round)} ${w.q.no}번</span><span class="q">${esc(plainText(w.q.q))}</span><span class="tag">${g === undefined ? "자가채점 대기" : verdictOf(w.q, g).label}</span></button>`;
     });
     html += `</div></div></div>`;
     app.innerHTML = html;
-    $("#homeBtn").addEventListener("click", () => { S.session = null; Store.save(); go(backView()); });
+    $("#homeBtn").addEventListener("click", () => go(endSession()));
     $("#reviewBtn").addEventListener("click", () => { sess.idx = 0; go("session"); });
     $$(".witem").forEach((b) => b.addEventListener("click", () => { sess.idx = Number(b.dataset.i); go("session"); }));
   }
@@ -2944,6 +2948,12 @@ body.penmode{padding-bottom:96px}
     }
     if (e.key === "b" || e.key === "B") { const mb = $("#markBtn"); if (mb) mb.click(); }
   });
+
+  /* ================= 스와이프 (폰·태블릿에서 좌우로 밀어 문항 이동) ================= */
+  // #app 은 화면이 바뀌어도 남아 있으므로 여기서 한 번만 붙인다. 가로 스크롤 상자·입력칸·펜 필기 레이어 위에서는 안 함
+  let swipe = null;
+  $("#app").addEventListener("touchstart", (e) => { if (view !== "session" || !sess || e.touches.length !== 1) { swipe = null; return; } const t = e.target; swipe = t.closest(".ink.on, .codewrap, .trace-code, .at, .rt, .cb-t, .cb-order, input, textarea, select, .penbar, .omr, .tout, .hb-sec, .fg-b") ? null : { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() }; }, { passive: true });
+  $("#app").addEventListener("touchend", (e) => { if (!swipe || view !== "session" || !sess) return; const t = e.changedTouches[0]; const dx = t.clientX - swipe.x, dy = t.clientY - swipe.y, dt = Date.now() - swipe.t; swipe = null; if (Math.abs(dx) > 80 && Math.abs(dy) < 60 && dt < 800) move(dx < 0 ? 1 : -1); }, { passive: true });
 
   /* ================= 테마 ================= */
   function applyTheme() {

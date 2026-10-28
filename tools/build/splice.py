@@ -1,4 +1,4 @@
-"""page.v6.bak.html(뷰어 교체 전 원본) + trace_viewer.css/js + pen_mode.css/js → page.html, 그리고 index.html 까지 다시 만든다."""
+"""src/page.base.html(뷰어 교체 전 원본) + trace_viewer·pen_mode·calc_board(css/js) + sql_trace.js → src/page.html, 그리고 index.html 까지 다시 만든다."""
 import subprocess
 s = open("src/page.base.html", encoding="utf-8").read()
 def rep(old, new):

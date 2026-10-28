@@ -3,7 +3,7 @@ import json, glob, re, html, os
 OUT = "src"
 def unesc(s): return html.unescape(re.sub(r"<br\s*/?>", "\n", s))
 items = []
-for f in sorted(glob.glob("/home/user/jcg-cbt/data/practical/*.js")):
+for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "practical", "*.js"))):
     rid = f.split("/")[-1][:-3]; s = open(f, encoding="utf-8").read(); qs = json.loads(s[s.index("]=")+2:].rstrip().rstrip(";"))["questions"]
     for q in qs:
         if q["unit"] not in ("C언어", "Java", "Python"): continue

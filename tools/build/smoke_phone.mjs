@@ -1,5 +1,5 @@
 // 핸드폰 크기(아이폰 390×844)에서 홈·코드 문항(추적 판)·계산 문항·펜 모드가 가로 넘침 없이 나오는지
-import { chromium } from "/opt/node22/lib/node_modules/playwright/index.mjs";
+import { chromium } from "playwright";
 const base = "http://127.0.0.1:8765/index.html";
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, hasTouch: true, isMobile: false });
