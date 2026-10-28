@@ -1,10 +1,10 @@
-"""src/page.base.html(뷰어 교체 전 원본) + trace_viewer·pen_mode·calc_board(css/js) + sql_trace.js → src/page.html, 그리고 index.html 까지 다시 만든다."""
+"""src/page.base.html(뷰어 교체 전 원본) + trace_viewer·pen_mode·calc_board(css/js) + sql_trace.js + theme_b.css(B 디자인, 맨 뒤라 앞 규칙을 덮음) → src/page.html, 그리고 index.html 까지 다시 만든다."""
 import subprocess
 s = open("src/page.base.html", encoding="utf-8").read()
 def rep(old, new):
     global s
     assert s.count(old) == 1, old[:70]; s = s.replace(old, new)
-css = open("src/trace_viewer.css", encoding="utf-8").read() + open("src/pen_mode.css", encoding="utf-8").read() + open("src/calc_board.css", encoding="utf-8").read()
+css = open("src/trace_viewer.css", encoding="utf-8").read() + open("src/pen_mode.css", encoding="utf-8").read() + open("src/calc_board.css", encoding="utf-8").read() + open("src/theme_b.css", encoding="utf-8").read()
 js = open("src/trace_viewer.js", encoding="utf-8").read() + open("src/pen_mode.js", encoding="utf-8").read() + open("src/calc_board.js", encoding="utf-8").read() + open("src/sql_trace.js", encoding="utf-8").read()
 a = s.index("/* ---------- 실행 추적 뷰어 ---------- */"); b = s.index("</style>", a); s = s[:a] + css + s[b:]
 a = s.index("  /* ================= 실행 추적 뷰어 ================= */"); b = s.index("  /* ================= 키보드 ================= */", a); s = s[:a] + js + s[b:]

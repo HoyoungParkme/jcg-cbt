@@ -2,30 +2,33 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&display=swap">
 <style>
-/* Layout concept: 시험지 한 장을 책상 위에 올려둔 구도. 왼쪽 문제지, 오른쪽 해설·답안 현황. 장식 없이 선·여백·숫자로만 상태를 보여준다. */
+/* Layout concept (B 시험지와 OMR): 인쇄된 시험지·답안지·연습지. 문제와 제목은 명조, 칠한 OMR 칸과 채점 동그라미로 상태를 보여 준다.
+   라이트는 블로그 색을 밝게 옮긴 잉크·마젠타·청록, 다크는 블로그(hypark.tistory.com) 그대로의 보랏빛 검정·마젠타·시안. */
 :root{
-  --bg:#eceff3; --paper:#ffffff; --paper-2:#f5f7fa; --fg:#171c23; --muted:#636d7a;
-  --line:#d6dbe3; --line-strong:#b8c0cc;
-  --accent:#1c4f87; --accent-soft:#e3ecf7; --accent-ink:#ffffff;
-  --ok:#1f7a4d; --ok-bg:#e3f2e9; --no:#b5362f; --no-bg:#f9e5e3; --mark:#b7791f; --mark-bg:#fbf0d9; --warn:#8a5a00;
-  --shadow:0 1px 2px rgba(23,28,35,.06),0 8px 24px -12px rgba(23,28,35,.18);
+  --bg:#f5f3fa; --paper:#ffffff; --paper-2:#faf9fc; --fg:#1e1433; --muted:#5f5475; --ink:#1e1433;
+  --line:#e3dcec; --line-strong:#c9bedd;
+  --accent:#d6197a; --accent-text:#b0105f; --accent-soft:#fbf0f6; --accent-ink:#ffffff;
+  --ok:#00788c; --ok-bg:#eaf6f8; --no:#c2410c; --no-bg:#fcede6; --mark:#6c3fd1; --mark-bg:#f0eafb; --warn:#9a5b00;
+  --grid:#ece7f4; --shadow:none;
   --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  --mono:"IBM Plex Mono","SFMono-Regular",Consolas,"D2Coding",monospace;
-  --radius:6px;
+  --serif:"Nanum Myeongjo","AppleMyungjo","Batang",serif;
+  --pen:"Nanum Pen Script",cursive;
+  --mono:"JetBrains Mono","SFMono-Regular",Consolas,"D2Coding",monospace;
+  --radius:0px;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#11151b; --paper:#1a2028; --paper-2:#222a34; --fg:#e6e9ee; --muted:#98a2b0; --line:#2d3643; --line-strong:#3e4957;
-    --accent:#8bb8e8; --accent-soft:#1f3047; --accent-ink:#0f1620; --ok:#62c48f; --ok-bg:#163424; --no:#f08f88; --no-bg:#3d2120; --mark:#e2b457; --mark-bg:#3a2e14; --warn:#e0b25a;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6); color-scheme:dark;
+    --bg:#0d0716; --paper:#150d24; --paper-2:#1e1430; --fg:#eee8f7; --muted:#a397ba; --ink:#d6cbe8; --line:#2a1f3d; --line-strong:#3a2c52;
+    --accent:#ff2e93; --accent-text:#ff7ab8; --accent-soft:#2a1230; --accent-ink:#0d0716; --ok:#2ee6ff; --ok-bg:#0f2730; --no:#ff9f43; --no-bg:#33200f; --mark:#b98cff; --mark-bg:#241536; --warn:#ffc266;
+    --grid:#1f1530; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#11151b; --paper:#1a2028; --paper-2:#222a34; --fg:#e6e9ee; --muted:#98a2b0; --line:#2d3643; --line-strong:#3e4957;
-  --accent:#8bb8e8; --accent-soft:#1f3047; --accent-ink:#0f1620; --ok:#62c48f; --ok-bg:#163424; --no:#f08f88; --no-bg:#3d2120; --mark:#e2b457; --mark-bg:#3a2e14; --warn:#e0b25a;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6); color-scheme:dark;
+  --bg:#0d0716; --paper:#150d24; --paper-2:#1e1430; --fg:#eee8f7; --muted:#a397ba; --ink:#d6cbe8; --line:#2a1f3d; --line-strong:#3a2c52;
+  --accent:#ff2e93; --accent-text:#ff7ab8; --accent-soft:#2a1230; --accent-ink:#0d0716; --ok:#2ee6ff; --ok-bg:#0f2730; --no:#ff9f43; --no-bg:#33200f; --mark:#b98cff; --mark-bg:#241536; --warn:#ffc266;
+  --grid:#1f1530; color-scheme:dark;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -262,14 +265,23 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
 .feedback .ans b{font-weight:600}
 .selfgrade{display:flex;gap:6px;margin-left:auto}
 .explain{margin-top:14px;font-size:14.5px;line-height:1.7;max-width:76ch;overflow-wrap:anywhere}
-.explain .tabs{display:flex;gap:2px;margin-bottom:10px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-.explain .tabs button{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:4px 8px;color:var(--muted);font-size:13px;font-weight:500}
-.explain .tabs button.on{color:var(--fg);border-bottom-color:var(--accent)}
-.explain .body p{margin:0 0 8px}
-.explain .body p:last-child{margin-bottom:0}
-.explain .note{font-size:12px;color:var(--muted);margin-top:8px}
 .explain .wiki{margin-top:10px;font-size:13px;display:flex;gap:6px 14px;flex-wrap:wrap}
 .explain .none{color:var(--muted);font-size:13.5px;padding:10px 0}
+.explain .ex-sec{margin:0 0 14px}
+.explain .ex-sec h4{margin:0 0 6px;font-size:12.5px;font-weight:700;color:var(--accent)}
+.explain .ex-sec p{margin:0}
+.explain .ex-choices,.explain .ex-steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.explain .ex-choices li{display:grid;grid-template-columns:22px 1fr;gap:6px;align-items:baseline}
+.explain .ex-choices li .n{color:var(--muted)}
+.explain .ex-choices li.ok .n,.explain .ex-choices li.ok b{color:var(--ok)}
+.explain .ex-steps{counter-reset:st}
+.explain .ex-steps li{counter-increment:st;display:grid;grid-template-columns:22px 1fr;gap:6px}
+.explain .ex-steps li::before{content:counter(st) ".";color:var(--muted);font-variant-numeric:tabular-nums}
+.explain .ex-kw{border-collapse:collapse;width:100%;font-size:13.5px}
+.explain .ex-kw th,.explain .ex-kw td{border:0;border-bottom:1px solid var(--line);padding:6px 8px 6px 0;text-align:left;vertical-align:top}
+.explain .ex-kw th{width:38%;font-weight:600;overflow-wrap:anywhere}
+.explain .ex-memo{margin:0 0 12px;padding:8px 12px;background:var(--accent-soft);border-radius:var(--radius)}
+.explain .ex-memo b{color:var(--accent);margin-right:6px}
 .warnline{font-size:12.5px;color:var(--warn);margin-top:10px}
 .kbd{font-size:11.5px;color:var(--muted);display:none;margin-top:12px;text-align:center}
 @media (min-width:1001px){.kbd{display:block}}
@@ -350,10 +362,6 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
 .notes-body pre{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;font-family:var(--mono);font-size:13px;overflow-x:auto}
 
 /* ---------- 디자인 보정: 트랙별 강조색, 위계, 호버 ---------- */
-:root[data-track="practical"]{--accent:#0f6b63;--accent-soft:#ddf1ec}
-@media (prefers-color-scheme:dark){:root[data-track="practical"]:not([data-theme="light"]){--accent:#5fd3c3;--accent-soft:#163a35;--accent-ink:#0b1a17}}
-:root[data-track="practical"][data-theme="dark"]{--accent:#5fd3c3;--accent-soft:#163a35;--accent-ink:#0b1a17}
-.brand::before{content:"";display:inline-block;width:10px;height:10px;background:var(--accent);border-radius:2px;margin-right:2px;align-self:center}
 .home-head h1{font-size:26px}
 .section-head h2{font-size:18px}
 .quick button,.round,.uitem,.opt{transition:border-color .12s,transform .12s,box-shadow .12s}
@@ -362,15 +370,6 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
 .pick-opts{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .statline.compact div{padding:8px 14px}
 .statline.compact .v{font-size:17px}
-.explain .body p{margin:0 0 6px;padding-left:12px;position:relative}
-.explain .body p::before{content:"";position:absolute;left:0;top:.75em;width:4px;height:4px;border-radius:50%;background:var(--line-strong)}
-.explain .body p.key{background:var(--accent-soft);border-left:3px solid var(--accent);padding:8px 12px;border-radius:0 var(--radius) var(--radius) 0;margin:8px 0;font-weight:500}
-.explain .body p.key::before{display:none}
-.explain .body table{border-collapse:collapse;font-size:13.5px;margin:8px 0}
-.explain .body td,.explain .body th{border:1px solid var(--line-strong);padding:4px 10px}
-.explain .body th{background:var(--paper-2)}
-.explain .body pre{font-family:var(--mono);font-size:13px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;overflow-x:auto}
-.explain .body b{font-weight:600;color:var(--accent)}
 
 /* ---------- 실행 추적 뷰어 ---------- */
 .trace{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;margin-bottom:14px;border-bottom:1px solid var(--line);padding-bottom:14px}
@@ -459,6 +458,10 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
   // open: 오픈북(정답을 펼쳐 두고 회독) / practice: 해설(문항마다 채점·해설) / exam: 시험(제출 후 한꺼번에 채점)
   const MODE_NAME = { open: "오픈북", practice: "해설", exam: "시험" };
   const CIRCLED = ["①", "②", "③", "④", "⑤"];
+  const svg = (d) => `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+  const ICON = { first: svg("M6 5v14M18 6l-8 6 8 6"), prev: svg("M15 18l-6-6 6-6"), next: svg("M9 18l6-6-6-6"), last: svg("M18 5v14M6 6l8 6-8 6") };
+  // 추적 판의 단계 이동 버튼 (실행 추적·SQL 판 공용)
+  const stepCtl = (posId) => `<span class="trace-ctl"><button data-t="first" aria-label="처음 단계" title="처음">${ICON.first}</button><button data-t="prev" aria-label="이전 단계" title="이전 ( [ 키 )">${ICON.prev}</button><span class="pos" id="${posId}"></span><button data-t="next" aria-label="다음 단계" title="다음 ( ] 키 )">${ICON.next}</button><button data-t="last" aria-label="마지막 단계" title="끝">${ICON.last}</button></span>`;
   const today = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
   const modePill = (m) => `<span class="pill ${m === "exam" ? "acc" : m === "open" ? "mark" : ""}">${MODE_NAME[m]}</span>`;
   const unitOf = (q) => q.unit;
@@ -758,7 +761,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
       html += `</tbody></table></div></section>`;
     }
 
-    html += `<p class="foot">문제 데이터는 응시자들이 복원한 기출로, 실제 출제 문항과 다를 수 있습니다. 해설은 공개 저장소의 것을 문항별로 맞춰 붙였고, "AI 해설"은 자동 생성되어 오류가 있을 수 있습니다. 해설이 없는 문항은 <b>AI에게 묻기</b>로 문제를 복사해 AI 채팅에 물어보세요.<br>학습 기록은 이 브라우저의 localStorage에만 저장됩니다. <button class="btn ghost sm" id="exportBtn">기록 복사(JSON)</button> <button class="btn ghost sm" id="resetBtn">기록 초기화</button></p>`;
+    html += `<p class="foot">문제 데이터는 응시자들이 복원한 기출로, 실제 출제 문항과 다를 수 있습니다. 해설은 문항마다 직접 쓰고 따로 검수했지만 틀린 곳이 있을 수 있습니다. 더 자세히 알고 싶으면 문제 카드의 <b>AI용으로 복사</b>로 요청문을 복사해 AI 채팅에 붙여 넣으세요.<br>학습 기록은 이 브라우저의 localStorage에만 저장됩니다. <button class="btn ghost sm" id="exportBtn">기록 복사(JSON)</button> <button class="btn ghost sm" id="resetBtn">기록 초기화</button></p>`;
     app.innerHTML = html;
 
     $$("#trackSeg button", app).forEach((b) => b.addEventListener("click", () => { P.track = b.dataset.track; Store.save(); renderHome(); }));
@@ -793,22 +796,27 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
     let html = `<div class="page-head"><button class="btn sm ghost" id="backBtn">← 학습 방식</button><h1>${TRACK_NAME[t]} · 회차별</h1>${modePill(mode)}<div class="spacer"></div>
       <div class="seg sm" id="modeSeg"><button class="${mode === "exam" ? "on" : ""}" data-mode="exam">시험</button><button class="${mode === "practice" ? "on" : ""}" data-mode="practice">해설</button><button class="${mode === "open" ? "on" : ""}" data-mode="open">오픈북</button></div></div>
       <p class="lead">${mode === "exam" ? `${EXAM_MINUTES[t]}분 타이머가 돌고, 제출하면 한꺼번에 채점합니다. ${t === "written" ? "과목당 40점 미만이면 과락, 평균 60점 이상이면 합격." : "60점 이상이면 합격."}` : mode === "practice" ? "문항마다 바로 채점하고 해설을 봅니다. 틀린 문제는 오답노트에 쌓입니다." : "정답과 해설을 펼쳐 둔 채 넘겨 봅니다. 기록은 남지 않습니다."} 평균 점수는 원본 사이트 응시자 평균입니다.</p>`;
+    // 연도 × 회차 표: 칸마다 진도(푼 수 / 문항 수)와 정답률. 2020년 1·2회처럼 합쳐 치른 회차는 두 칸을 차지한다
     const byYear = {};
-    man.rounds.slice().reverse().forEach((r) => { const y = r.id.split("-")[0]; (byYear[y] = byYear[y] || []).push(r); });
+    man.rounds.forEach((r) => { const [y, ...ks] = r.id.split("-"); (byYear[y] = byYear[y] || []).push({ r, from: Number(ks[0]), span: ks.length }); });
+    const cols = Math.max(...man.rounds.map((r) => { const ks = r.id.split("-").slice(1); return Number(ks[ks.length - 1]); }));
+    const cell = ({ r, span }) => {
+      const p = roundProgress(t, r.id), pct = p.solved ? Math.round((p.correct / p.solved) * 100) : null;
+      const label = r.label.replace(/^\d+년\s*/, ""), state = p.solved >= r.n ? `${pct}%` : p.solved ? `${p.solved}/${r.n}` : "";
+      return `<td colspan="${span}"><button class="round ${p.solved && p.solved < r.n ? "doing" : p.solved ? "done" : ""}" data-round="${r.id}" aria-label="${esc(r.label)} ${MODE_NAME[mode]} 모드로 풀기${p.solved ? `, ${p.solved}문항 풀이, 정답률 ${pct}%` : ""}">
+          <span class="t"><b>${esc(label)}</b><span class="st num">${state}</span></span>
+          <span class="bar"><i class="c" style="width:${(p.correct / r.n) * 100}%"></i><i class="w" style="width:${((p.solved - p.correct) / r.n) * 100}%"></i></span>
+          ${r.avg != null ? `<span class="meta num">평균 ${r.avg}점</span>` : ""}
+        </button></td>`;
+    };
+    html += `<div class="rtable-wrap"><table class="rtable"><caption class="sr">연도와 회차별 기출. 칸을 누르면 ${MODE_NAME[mode]} 모드로 시작합니다</caption><thead><tr><th scope="col">연도</th>${Array.from({ length: cols }, (_, k) => `<th scope="col">${k + 1}회</th>`).join("")}</tr></thead><tbody>`;
     Object.keys(byYear).sort((a, b) => b - a).forEach((y) => {
-      html += `<div class="year"><h2>${y}년 시행</h2><div class="rounds">`;
-      byYear[y].forEach((r) => {
-        const p = roundProgress(t, r.id);
-        const pct = p.solved ? Math.round((p.correct / p.solved) * 100) : null;
-        html += `<div class="round">
-          <div class="t"><b>${esc(r.label)}</b><span class="num">${r.n}문항${r.avg != null ? ` · 평균 ${r.avg}점` : ""}</span></div>
-          <div class="bar"><i class="c" style="width:${(p.correct / r.n) * 100}%"></i><i class="w" style="width:${((p.solved - p.correct) / r.n) * 100}%"></i></div>
-          <div class="meta"><span>${p.solved ? `${p.solved}문항 풀이` : "아직 안 풂"}</span><span class="num">${pct === null ? "" : "정답률 " + pct + "%"}</span></div>
-          <div class="acts"><button class="btn primary" data-round="${r.id}">${MODE_NAME[mode]} 모드로 풀기</button></div>
-        </div>`;
-      });
-      html += `</div></div>`;
+      let row = "", k = 1;
+      byYear[y].sort((a, b) => a.from - b.from).forEach((c) => { while (k < c.from) { row += "<td></td>"; k++; } row += cell(c); k += c.span; });
+      while (k <= cols) { row += "<td></td>"; k++; }
+      html += `<tr><th scope="row" class="num">${y}</th>${row}</tr>`;
     });
+    html += `</tbody></table></div>`;
     app.innerHTML = html;
     $("#backBtn").addEventListener("click", () => go("home"));
     $$("#modeSeg button", app).forEach((b) => b.addEventListener("click", () => { P.mode = b.dataset.mode; Store.save(); renderRounds(); }));
@@ -993,7 +1001,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
     const [year, ...rn] = sess.refs[i].round.split("-");
     const tags = q.rate != null ? `<span class="pill num" title="복원 데이터 응시자 정답률">정답률 ${q.rate}%</span>${q.rate < 40 ? '<span class="pill no">킬러</span>' : ""}` : sess.track === "practical" ? `<span class="pill mark">배점 ${q.points || 5}점</span>` : "";
     let html = `<div class="qmeta"><span class="qn">Q.${i + 1}</span><span class="pill num">${year}년</span><span class="pill num">${rn.join("·")}회</span><span class="pill acc">${esc(unitOf(q))}</span>${tags}
-      <button class="markbtn" id="copyQBtn" title="문제 본문(코드·보기 포함)을 텍스트로 복사">⧉ 복사</button><button class="markbtn ${S.marks[q.id] ? "on" : ""}" id="markBtn">${S.marks[q.id] ? "★ 저장됨" : "☆ 저장"}</button></div>`;
+      <button class="markbtn" id="copyQBtn" title="문제·정답과 해설 요청문을 함께 복사합니다. AI 채팅에 바로 붙여 넣으세요">AI용으로 복사</button><button class="markbtn ${S.marks[q.id] ? "on" : ""}" id="markBtn">${S.marks[q.id] ? "★ 저장됨" : "☆ 저장"}</button></div>`;
     html += `<div class="stem">${q.q}</div>`;
     if (sess.track === "written") {
       const order = choiceOrder(q);
@@ -1014,7 +1022,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
     $("#paper").innerHTML = html;
 
     /* ---- 오른쪽: 해설 패널 ---- */
-    let panel = `<div class="panel-h"><b>해설</b><span><button class="btn sm ghost" id="copyBtn" title="문제·정답·해설을 텍스트로 복사">복사</button><button class="btn sm ghost" id="askBtn" title="AI 채팅에 붙여 넣어 상세 해설을 요청하는 프롬프트를 복사">AI에게 묻기</button></span></div>`;
+    let panel = `<div class="panel-h"><b>해설</b><span><button class="btn sm ghost" id="copyBtn" title="문제·정답·해설을 텍스트로 복사">복사</button></span></div>`;
     if (isOpen) {
       panel += sess.track === "written"
         ? `<div class="feedback wait"><span>정답</span><span class="ans"><b>${CIRCLED[q.ans - 1]}</b> ${plainText(q.choices[q.ans - 1])}</span></div>`
@@ -1052,10 +1060,8 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
     $$("[data-self]").forEach((b) => b.addEventListener("click", () => selfGrade(b.dataset.self === "1")));
     const ta = $("#shortInput"); if (ta) { ta.addEventListener("input", () => { sess.ans[q.id] = ta.value; persist(); updateOmrCell(i); }); ta.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey && !/\n|<br/i.test(String(q.answer || ""))) { e.preventDefault(); checkShort(); } }); }
     $$("#shortMulti input").forEach((inp) => { inp.addEventListener("input", () => { sess.ans[q.id] = $$("#shortMulti input").map((x) => x.value); persist(); updateOmrCell(i); }); inp.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); checkShort(); } }); });
-    $$(".tabs button", $("#panel")).forEach((b) => b.addEventListener("click", () => { $$(".tabs button", $("#panel")).forEach((x) => x.classList.toggle("on", x === b)); $("#panel .explain .body").innerHTML = b.dataset.html; $("#panel .explain .note").textContent = b.dataset.note || ""; }));
     $("#copyBtn").addEventListener("click", () => copyQuestion(q, revealed, false));
-    const cq = $("#copyQBtn"); if (cq) cq.addEventListener("click", () => copyQuestion(q, false, false));
-    $("#askBtn").addEventListener("click", () => copyQuestion(q, revealed, true));
+    $("#copyQBtn").addEventListener("click", () => copyQuestion(q, revealed, true));
     highlightIn($("#paper .stem"));
     renderMidActs();
     if (ta && !revealed) ta.focus({ preventScroll: true });
@@ -1082,23 +1088,34 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
     return html;
   }
 
+  // 해설: 문항마다 직접 쓰고 따로 검수한 해설(q.exp)
   function renderExplain(q) {
-    const ex = q.explain || {};
-    const tabs = [];
-    if (ex.mine) tabs.push({ label: "정리 해설", html: ex.mine, note: "" });
-    if (ex.user) tabs.push({ label: "등록자 해설", html: ex.user, note: "원 데이터 이용자가 남긴 해설입니다." });
-    if (ex.ai) tabs.push({ label: "AI 해설", html: ex.ai, note: "자동 생성된 해설이라 틀린 설명이 섞여 있을 수 있습니다." });
     let html = `<div class="explain">`;
-    if (tabs.length) {
-      html += `<div class="tabs">${tabs.map((t, i) => `<button class="${i === 0 ? "on" : ""}" data-html="${esc(t.html)}" data-note="${esc(t.note)}">${t.label}</button>`).join("")}</div>
-        <div class="body">${tabs[0].html}</div><div class="note">${esc(tabs[0].note)}</div>`;
-    } else {
-      html += `<div class="none">이 문항에는 아직 해설이 없습니다. 위의 <b>AI에게 묻기</b>로 문제를 복사해 AI 채팅에 붙여 넣으면 상세 해설을 받을 수 있어요.</div>`;
-    }
+    html += q.exp ? expHtml(q.exp) : `<div class="none">이 문항에는 아직 해설이 없습니다. 문제 카드의 <b>AI용으로 복사</b>로 문제와 요청문을 복사해 AI 채팅에 붙여 넣으면 상세 해설을 받을 수 있어요.</div>`;
     if (q.wiki && q.wiki.length) html += `<div class="wiki">${q.wiki.map((w) => `<a href="${esc(w.url)}" target="_blank" rel="noopener">IT위키 · ${esc(w.title)} ↗</a>`).join("")}</div>`;
     if (q.warn && q.warn.length) html += `<div class="warnline">⚠ ${q.warn.map((w) => ({ doubt: "복원 데이터 간 정답이 서로 달라 이견이 있는 문항입니다.", ambiguous: "문항 표현이 모호해 해석이 갈릴 수 있습니다.", truncated: "복원본에서 일부가 잘렸을 수 있는 문항입니다.", mismatch: "복원 데이터 간 보기 내용이 다른 문항입니다." }[w] || w)).join(" ")}</div>`;
     html += `</div>`;
     return html;
+  }
+  // 직접 쓴 해설 한 개: 핵심 개념 → 보기별 판단(필기) 또는 풀이 과정(실기) → 함께 외울 용어 → 암기. 평문만 담겨 있어 모두 esc 한다
+  function expHtml(e) {
+    const sec = (title, body) => `<section class="ex-sec"><h4>${title}</h4>${body}</section>`;
+    let h = sec("핵심 개념", `<p>${esc(e.concept)}</p>`);
+    if (e.choices) h += sec("보기별 판단", `<ol class="ex-choices">${e.choices.map((c, k) => `<li class="${c.verdict === "정답" ? "ok" : ""}"><span class="n">${CIRCLED[k]}</span><span>${c.verdict === "정답" ? "<b>정답</b> " : ""}${esc(c.why)}</span></li>`).join("")}</ol>`);
+    if (e.steps) h += sec("풀이 과정", `<ol class="ex-steps">${e.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>`);
+    if (e.keywords && e.keywords.length) h += sec("함께 외울 용어", `<table class="ex-kw"><tbody>${e.keywords.map((k) => `<tr><th scope="row">${esc(k.term)}</th><td>${esc(k.desc)}</td></tr>`).join("")}</tbody></table>`);
+    if (e.memo) h += `<p class="ex-memo"><b>암기</b> ${esc(e.memo)}</p>`;
+    if (e.doubt) h += `<div class="warnline">⚠ ${esc(e.doubt)}</div>`;
+    return h;
+  }
+  // 복사·AI 요청문용 평문 해설
+  function expText(e) {
+    const out = ["핵심 개념: " + e.concept];
+    if (e.choices) e.choices.forEach((c, k) => out.push(`${k + 1}. [${c.verdict}] ${c.why}`));
+    if (e.steps) e.steps.forEach((s, k) => out.push(`${k + 1}) ${s}`));
+    if (e.keywords) out.push("용어: " + e.keywords.map((k) => `${k.term} - ${k.desc}`).join(" / "));
+    if (e.memo) out.push("암기: " + e.memo);
+    return out.join("\n");
   }
 
   function renderMidActs() {
@@ -1136,16 +1153,24 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
     persist(); renderQuestion(); updateOmrCell(sess.idx);
   }
 
+  // 문제 본문을 복사용 평문으로: 코드 블록(pre)은 줄과 들여쓰기를 그대로 두고, 나머지 글은 공백을 정리한다
+  function questionText(html) {
+    const box = document.createElement("div"); box.innerHTML = html;
+    const blocks = [];
+    box.querySelectorAll("pre").forEach((pre) => { blocks.push(pre.textContent.replace(/\r\n?/g, "\n").replace(/\n+$/, "")); pre.replaceWith(`⟦${blocks.length - 1}⟧`); });
+    return plainText(box.innerHTML).replace(/\s*⟦(\d+)⟧\s*/g, (_, k) => "\n" + blocks[k] + "\n").trim();
+  }
   // 문제·정답·해설을 텍스트로 복사. ask=true 면 AI 채팅용 요청문을 앞에 붙인다
   function copyQuestion(q, revealed, ask) {
-    const lines = [`[정보처리기사 ${TRACK_NAME[sess.track]} · ${Data.roundLabel(sess.track, sess.refs[sess.idx].round)} ${q.no}번 · ${unitOf(q)}]`, plainText(q.q.replace(/<\/(pre|code)>/g, "\n").replace(/\n/g, "⏎")).replace(/⏎/g, "\n")];
+    const lines = [`[정보처리기사 ${TRACK_NAME[sess.track]} · ${Data.roundLabel(sess.track, sess.refs[sess.idx].round)} ${q.no}번 · ${unitOf(q)}]`, questionText(q.q)];
     if (sess.track === "written") q.choices.forEach((c, k) => lines.push(`${k + 1}. ${plainText(c)}`));
     if (revealed || ask) {
       lines.push("", "정답: " + (sess.track === "written" ? `${q.ans}. ${plainText(q.choices[q.ans - 1])}` : answerText(q)));
-      const ex = q.explain || {}; const body = ex.mine || ex.user || ex.ai;
-      if (body && !ask) lines.push("", "해설: " + plainText(body));
+      if (q.exp && !ask) lines.push("", "해설:", expText(q.exp));
     }
-    if (ask) lines.push("", "위 문제의 상세 해설을 아래 형식으로 작성해 주세요.", "1. 핵심 개념: 문제 풀이에 필요한 개념을 중학생도 이해할 수 있는 비유와 함께 설명", "2. 보기별 정오 판단: 각 보기가 맞거나 틀린 근거", "3. 관련 키워드 표: 함께 외워야 할 용어를 표로 정리", "4. 암기법: 쉽게 기억하는 방법 한 줄");
+    if (ask) lines.push("", "위 문제의 상세 해설을 아래 형식으로 작성해 주세요.", "1. 핵심 개념: 문제 풀이에 필요한 개념을 중학생도 이해할 수 있는 비유와 함께 설명",
+      sess.track === "written" ? "2. 보기별 정오 판단: 각 보기가 맞거나 틀린 근거" : "2. 풀이 과정: 정답에 이르는 과정을 순서대로 (코드는 실행 순서와 변수 값 변화)",
+      "3. 관련 키워드 표: 함께 외워야 할 용어를 표로 정리", "4. 암기법: 쉽게 기억하는 방법 한 줄");
     copyText(lines.join("\n"), ask ? "AI 채팅에 붙여 넣을 요청문을 복사했어요" : "문제를 클립보드에 복사했어요");
   }
 
@@ -1293,6 +1318,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
         <div class="meta"><b>${esc(sess.title)}</b><span>${sc.total}문항 중 ${sc.correct}문항 정답${mins !== null ? ` · ${mins}분 소요` : ""}</span>
           ${isExam ? `<span><span class="pill ${sc.pass ? "ok" : "no"}">${sc.pass ? "합격" : "불합격"}</span>${sc.failSubj.length ? ` <span style="color:var(--no)">과락: ${sc.failSubj.map(esc).join(", ")}</span>` : ""}${sc.pendingSelf ? ` <span style="color:var(--warn)">자가채점 대기 ${sc.pendingSelf}문항</span>` : ""}</span>` : `<span>해설 모드 · 합격 판정은 시험 모드에서 합니다</span>`}
         </div>
+        ${isExam ? `<div class="stamp ${sc.pass ? "" : "fail"}" aria-hidden="true">${sc.pass ? "합격" : "불합격"}</div>` : ""}
         <div class="acts"><button class="btn" id="reviewBtn">문제 다시 보기</button><button class="btn primary" id="homeBtn">목록으로</button></div>
       </div>`;
     if (sc.subjects.length > 1) {
@@ -1330,7 +1356,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
     Object.keys(groups).forEach((k) => {
       html += `<div class="group"><h2>${esc(k)} <span>${groups[k].length}</span></h2>`;
       groups[k].forEach((x) => {
-        html += `<div class="nitem"><div><div class="q">${esc(x.q)}${x.q.length >= 90 ? "…" : ""}</div><div class="m"><span class="num">${Data.roundLabel(x.track, x.round)} ${x.no}번</span>${kind === "wrong" ? `<span>${x.n}회 틀림</span>` : ""}<span>${new Date(x.t).toLocaleDateString("ko-KR")}</span></div></div>
+        html += `<div class="nitem"><div><div class="q">${esc(x.q)}${x.q.length >= 90 ? "…" : ""}</div><div class="m"><span class="num">${Data.roundLabel(x.track, x.round)} ${x.no}번</span>${kind === "wrong" ? `<span class="times">${x.n}회 틀림</span>` : ""}<span>${new Date(x.t).toLocaleDateString("ko-KR")}</span></div></div>
           <div class="acts"><button class="btn sm" data-open="${x.id}">풀기</button><button class="btn sm ghost" data-del="${x.id}">제거</button></div></div>`;
       });
       html += `</div>`;

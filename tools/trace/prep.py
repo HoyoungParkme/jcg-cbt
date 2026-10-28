@@ -20,9 +20,17 @@ FILL = {   # 빈칸 문항: (찾을 정규식, 넣을 값). 정답 기준으로 
     "practical-2025-3-java-3": [(r"\(____빈칸____\)", "implements")],
     "practical-2020-2-java-1": [(r"____", "new")],
     "practical-2023-3-py-1": [(r"____", "split")],
+    # 필기: 빈칸은 정답 보기로, 복원하며 띄어 쓴 비교 연산자(= =)는 붙인다
+    "written-2025-1-72": [(r"\(\s{4,}\)", 'scanf("%d", &n);')],
+    "written-2025-3-68": [(r"import\s*\(\s*\)", "import java.util")],
+    "written-2026-1-75": [(r"=\s=", "=="), (r"=\s=", "==")],
 }
-STDIN = {"practical-2022-1-c-2": "5\n", "practical-2023-2-c-4": "5\n4\n3\n2\n1\n", "practical-2023-2-c-2": "홍길동\n김철수\n박영희\n", "practical-2026-1-py-1": "HumanDev\n", "practical-2023-3-py-1": "2 3\n"}
+STDIN = {"written-2022-3-64": "53t44\n", "written-2025-1-67": "53t44\n", "written-2025-2-67": "53t44\n", "written-2026-1-76": "53t44\n",
+         "written-2022-3-80": "c\n", "written-2026-1-71": "c\n", "written-2025-1-72": "5\n",
+         "practical-2022-1-c-2": "5\n", "practical-2023-2-c-4": "5\n4\n3\n2\n1\n", "practical-2023-2-c-2": "홍길동\n김철수\n박영희\n", "practical-2026-1-py-1": "HumanDev\n", "practical-2023-3-py-1": "2 3\n"}
 NO_MAIN_OK = {"practical-2025-3-java-2", "practical-2025-3-java-3", "practical-2023-3-java-3"}   # main 이 없거나 일부러 틀린 코드: 추적 대상 아님
+# 필기에서 추적하지 않는 문항: 오류 찾기(일부러 틀린 코드), "..생략.." 조각, 화면 그리기(turtle), 끝나지 않는 반복
+NO_TRACE = {"written-2024-2-62", "written-2025-2-72", "written-2024-3-80", "written-2025-1-79", "written-2023-1-64"}
 
 def strip_linenos(code):
     lines = code.split("\n")
@@ -104,7 +112,7 @@ for it in items:
     code = open(it["path"], encoding="utf-8").read()
     for pat, rep in FILL.get(it["id"], []): code = re.sub(pat, rep, code, count=1)
     d = f"build/{it['id']}"; os.makedirs(d)
-    meta = {**it, "stdin": STDIN.get(it["id"], ""), "fill": it["id"] in FILL, "skip": it["id"] in NO_MAIN_OK}
+    meta = {**it, "stdin": STDIN.get(it["id"], ""), "fill": it["id"] in FILL, "skip": it["id"] in NO_MAIN_OK or it["id"] in NO_TRACE}
     if it["lang"] == "c":
         code = prep_c(code); meta["src"] = f"{d}/main.c"
     elif it["lang"] == "java":

@@ -9,8 +9,10 @@ env = dict(os.environ); env.pop("JAVA_TOOL_OPTIONS", None)
 MAX = 1500
 index = {}; stat = collections.Counter()
 ONLY = os.environ.get("TRACE_ONLY")
+PREFIX = os.environ.get("TRACE_PREFIX")   # 예: written- → 그 문항만 새로 만들고 기존 색인에 합친다
 for m in metas:
     if ONLY and m["lang"] != ONLY: continue
+    if PREFIX and not m["id"].startswith(PREFIX): continue
     r = results.get(m["id"], {})
     if r.get("status") not in ("ok",) or m.get("skip"): stat["skip"] += 1; continue
     d = os.path.dirname(m["src"]); tr = None
@@ -41,7 +43,7 @@ for m in metas:
     open(f"{OUT}/{m['id']}.js", "w", encoding="utf-8").write(js)
     index[m["id"]] = {"n": c["n"], "st": tr["status"], "lang": tr["lang"]}
     stat[(m["lang"], tr["status"])] += 1
-if ONLY and os.path.exists(f"{OUT}/index.js"):
+if (ONLY or PREFIX) and os.path.exists(f"{OUT}/index.js"):
     old = json.loads(open(f"{OUT}/index.js", encoding="utf-8").read().split("=", 1)[1].rstrip().rstrip(";"))
     old.update(index); index = old
 json.dump(index, open(f"{OUT}/index.json", "w", encoding="utf-8"), ensure_ascii=False)

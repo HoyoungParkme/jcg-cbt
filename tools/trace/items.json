@@ -1,0 +1,1698 @@
+[
+ {
+  "id": "practical-2020-1-c-1",
+  "round": "2020-1",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2020-1-c-1.c",
+  "answer": "50758595100",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-1-java-1",
+  "round": "2020-1",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2020-1-java-1.java",
+  "answer": "0 1 2 3",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-1-java-2",
+  "round": "2020-1",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2020-1-java-2.java",
+  "answer": "-8",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-2-java-1",
+  "round": "2020-2",
+  "no": 18,
+  "lang": "java",
+  "path": "src/practical-2020-2-java-1.java",
+  "answer": "new",
+  "stem": "다음 Java 코드에서 밑줄에 들어갈 키워드를 쓰시오."
+ },
+ {
+  "id": "practical-2020-2-py-1",
+  "round": "2020-2",
+  "no": 19,
+  "lang": "py",
+  "path": "src/practical-2020-2-py-1.py",
+  "answer": "{'중국', '한국', '베트남', '홍콩', '태국'}",
+  "stem": "다음 Python 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-2-java-2",
+  "round": "2020-2",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2020-2-java-2.java",
+  "answer": "a=10",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-3-c-1",
+  "round": "2020-3",
+  "no": 17,
+  "lang": "c",
+  "path": "src/practical-2020-3-c-1.c",
+  "answer": "0",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-3-java-1",
+  "round": "2020-3",
+  "no": 18,
+  "lang": "java",
+  "path": "src/practical-2020-3-java-1.java",
+  "answer": "Vehicle name:Spark",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-3-c-2",
+  "round": "2020-3",
+  "no": 19,
+  "lang": "c",
+  "path": "src/practical-2020-3-c-2.c",
+  "answer": "234",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-3-java-2",
+  "round": "2020-3",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2020-3-java-2.java",
+  "answer": "30",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-4-c-1",
+  "round": "2020-4",
+  "no": 16,
+  "lang": "c",
+  "path": "src/practical-2020-4-c-1.c",
+  "answer": "KOREA\nEA\nK\nE\nM",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-4-java-1",
+  "round": "2020-4",
+  "no": 17,
+  "lang": "java",
+  "path": "src/practical-2020-4-java-1.java",
+  "answer": "1",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-4-py-1",
+  "round": "2020-4",
+  "no": 18,
+  "lang": "py",
+  "path": "src/practical-2020-4-py-1.py",
+  "answer": "[1, 2, 3]\n7\n123\n45\n6789",
+  "stem": "다음 Python 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2020-4-java-2",
+  "round": "2020-4",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2020-4-java-2.java",
+  "answer": "(1) 3  (2) 5",
+  "stem": "다음 Java 프로그램의 출력 결과를 보고 빈칸 (1), (2)에 알맞은 값을 쓰시오.\n출력:\n1 4 7 10 13\n2 5 8 11 14\n3 6 9 12 15"
+ },
+ {
+  "id": "practical-2020-4-java-3",
+  "round": "2020-4",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2020-4-java-3.java",
+  "answer": "(1) n > 0  (2) n % 2",
+  "stem": "n이 10일 때, 10을 2진수로 변환하는 다음 코드에서 빈칸 (1), (2)에 알맞은 값을 쓰시오."
+ },
+ {
+  "id": "practical-2021-1-c-1",
+  "round": "2021-1",
+  "no": 17,
+  "lang": "c",
+  "path": "src/practical-2021-1-c-1.c",
+  "answer": "Lee\n38",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-1-java-1",
+  "round": "2021-1",
+  "no": 18,
+  "lang": "java",
+  "path": "src/practical-2021-1-java-1.java",
+  "answer": "0+1+2+3+4+5=15",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-1-py-1",
+  "round": "2021-1",
+  "no": 19,
+  "lang": "py",
+  "path": "src/practical-2021-1-py-1.py",
+  "answer": "skiddp",
+  "stem": "다음 Python 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-1-java-2",
+  "round": "2021-1",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2021-1-java-2.java",
+  "answer": "3\n1\n45\n50\n89",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-2-c-1",
+  "round": "2021-2",
+  "no": 16,
+  "lang": "c",
+  "path": "src/practical-2021-2-c-1.c",
+  "answer": "8",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-2-java-1",
+  "round": "2021-2",
+  "no": 17,
+  "lang": "java",
+  "path": "src/practical-2021-2-java-1.java",
+  "answer": "11",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-2-py-1",
+  "round": "2021-2",
+  "no": 18,
+  "lang": "py",
+  "path": "src/practical-2021-2-py-1.py",
+  "answer": "26",
+  "stem": "다음 Python 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-2-c-2",
+  "round": "2021-2",
+  "no": 19,
+  "lang": "c",
+  "path": "src/practical-2021-2-c-2.c",
+  "answer": "1024",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-2-java-2",
+  "round": "2021-2",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2021-2-java-2.java",
+  "answer": "static",
+  "stem": "다음 Java 프로그램에서 빈칸에 들어갈 키워드를 쓰시오.\n출력: positive"
+ },
+ {
+  "id": "practical-2021-3-c-1",
+  "round": "2021-3",
+  "no": 16,
+  "lang": "c",
+  "path": "src/practical-2021-3-c-1.c",
+  "answer": "501",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-3-java-1",
+  "round": "2021-3",
+  "no": 17,
+  "lang": "java",
+  "path": "src/practical-2021-3-java-1.java",
+  "answer": "7",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-3-py-1",
+  "round": "2021-3",
+  "no": 18,
+  "lang": "py",
+  "path": "src/practical-2021-3-py-1.py",
+  "answer": "False",
+  "stem": "다음 Python 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-3-c-2",
+  "round": "2021-3",
+  "no": 19,
+  "lang": "c",
+  "path": "src/practical-2021-3-c-2.c",
+  "answer": "37",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2021-3-java-2",
+  "round": "2021-3",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2021-3-java-2.java",
+  "answer": "3",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-1-t-10",
+  "lang": null
+ },
+ {
+  "id": "practical-2022-1-c-1",
+  "round": "2022-1",
+  "no": 15,
+  "lang": "c",
+  "path": "src/practical-2022-1-c-1.c",
+  "answer": "29",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-1-java-1",
+  "round": "2022-1",
+  "no": 16,
+  "lang": "java",
+  "path": "src/practical-2022-1-java-1.java",
+  "answer": "2000",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-1-py-1",
+  "round": "2022-1",
+  "no": 17,
+  "lang": "py",
+  "path": "src/practical-2022-1-py-1.py",
+  "answer": "a= 20 b= 2",
+  "stem": "다음 Python 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-1-c-2",
+  "round": "2022-1",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2022-1-c-2.c",
+  "answer": "120",
+  "stem": "입력값이 5일 때 다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-1-java-2",
+  "round": "2022-1",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2022-1-java-2.java",
+  "answer": "Car",
+  "stem": "다음 Java 프로그램의 빈칸에 들어갈 코드를 쓰시오."
+ },
+ {
+  "id": "practical-2022-1-c-3",
+  "round": "2022-1",
+  "no": 20,
+  "lang": "c",
+  "path": "src/practical-2022-1-c-3.c",
+  "answer": ">   %   /",
+  "stem": "정수를 역순으로 출력하는 다음 코드에서 괄호 (1), (2), (3)에 들어갈 연산자를 쓰시오."
+ },
+ {
+  "id": "practical-2022-2-c-1",
+  "round": "2022-2",
+  "no": 15,
+  "lang": "c",
+  "path": "src/practical-2022-2-c-1.c",
+  "answer": "22",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-2-java-1",
+  "round": "2022-2",
+  "no": 16,
+  "lang": "java",
+  "path": "src/practical-2022-2-java-1.java",
+  "answer": "-8",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-2-py-1",
+  "round": "2022-2",
+  "no": 17,
+  "lang": "py",
+  "path": "src/practical-2022-2-py-1.py",
+  "answer": "REMEMBER AND STR",
+  "stem": "다음 Python 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-2-c-2",
+  "round": "2022-2",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2022-2-c-2.c",
+  "answer": "10",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-2-java-2",
+  "round": "2022-2",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2022-2-java-2.java",
+  "answer": "61",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-2-c-3",
+  "round": "2022-2",
+  "no": 20,
+  "lang": "c",
+  "path": "src/practical-2022-2-c-3.c",
+  "answer": "2",
+  "stem": "다음 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-3-c-1",
+  "round": "2022-3",
+  "no": 15,
+  "lang": "c",
+  "path": "src/practical-2022-3-c-1.c",
+  "answer": "1 1 3 2\n3 4 5 3\n3 5 6 4\n3 5 5 3",
+  "stem": "다음 프로그램에서 mines 배열의 최종 값을 2차원 배열 형태로 쓰시오.\nfield = {{0,1,0,1},{0,0,0,1},{1,1,1,0},{0,1,1,1}}"
+ },
+ {
+  "id": "practical-2022-3-java-1",
+  "round": "2022-3",
+  "no": 16,
+  "lang": "java",
+  "path": "src/practical-2022-3-java-1.java",
+  "answer": "993",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-3-py-1",
+  "round": "2022-3",
+  "no": 17,
+  "lang": "py",
+  "path": "src/practical-2022-3-py-1.py",
+  "answer": "[101, 102, 103, 104, 105]",
+  "stem": "다음 Python 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-3-c-2",
+  "round": "2022-3",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2022-3-c-2.c",
+  "answer": "24513",
+  "stem": "다음 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-3-java-2",
+  "round": "2022-3",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2022-3-java-2.java",
+  "answer": "0123",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2022-3-c-3",
+  "round": "2022-3",
+  "no": 20,
+  "lang": "c",
+  "path": "src/practical-2022-3-c-3.c",
+  "answer": "2",
+  "stem": "다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2023-1-c-1",
+  "round": "2023-1",
+  "no": 13,
+  "lang": "c",
+  "path": "src/practical-2023-1-c-1.c",
+  "answer": "qwe",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-1-java-1",
+  "round": "2023-1",
+  "no": 14,
+  "lang": "java",
+  "path": "src/practical-2023-1-java-1.java",
+  "answer": "10\n11\n10\n20",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-1-py-1",
+  "round": "2023-1",
+  "no": 15,
+  "lang": "py",
+  "path": "src/practical-2023-1-py-1.py",
+  "answer": "{'한국', '중국', '베트남', '홍콩', '태국'}",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-1-c-2",
+  "round": "2023-1",
+  "no": 16,
+  "lang": "c",
+  "path": "src/practical-2023-1-c-2.c",
+  "answer": "Art\nA\nA\nArt\nArt",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-1-java-2",
+  "round": "2023-1",
+  "no": 17,
+  "lang": "java",
+  "path": "src/practical-2023-1-java-2.java",
+  "answer": "500",
+  "stem": "다음 Java 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2023-1-c-3",
+  "round": "2023-1",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2023-1-c-3.c",
+  "answer": "(a) %  (b) 10\n또는 (a) &  (b) 1",
+  "stem": "빈칸 (a)(b)를 작성하시오."
+ },
+ {
+  "id": "practical-2023-1-java-3",
+  "round": "2023-1",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2023-1-java-3.java",
+  "answer": "Vehicle name: Spark",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-1-java-4",
+  "round": "2023-1",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2023-1-java-4.java",
+  "answer": "① idx2\n② nx",
+  "stem": "다음 Java 프로그램에서 빈칸 (1)과 (2)에 들어갈 코드를 쓰시오."
+ },
+ {
+  "id": "practical-2023-2-c-1",
+  "round": "2023-2",
+  "no": 12,
+  "lang": "c",
+  "path": "src/practical-2023-2-c-1.c",
+  "answer": "505",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-2-java-1",
+  "round": "2023-2",
+  "no": 13,
+  "lang": "java",
+  "path": "src/practical-2023-2-java-1.java",
+  "answer": "true\nfalse\ntrue\ntrue",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-2-py-1",
+  "round": "2023-2",
+  "no": 14,
+  "lang": "py",
+  "path": "src/practical-2023-2-py-1.py",
+  "answer": "engneing",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-2-c-2",
+  "round": "2023-2",
+  "no": 15,
+  "lang": "c",
+  "path": "src/practical-2023-2-c-2.c",
+  "answer": "박영희\n박영희\n박영희",
+  "stem": "입력이 순서대로 홍길동, 김철수, 박영희일 때 다음 C 프로그램의 출력 결과를 쓰시오."
+ },
+ {
+  "id": "practical-2023-2-java-2",
+  "round": "2023-2",
+  "no": 16,
+  "lang": "java",
+  "path": "src/practical-2023-2-java-2.java",
+  "answer": "a = m / 1000\nb = (m % 1000) / 500\nc = (m % 500) / 100\nd = (m % 100) / 10",
+  "stem": "4620원을 천원·오백원·백원·십원 단위로 분리하는 빈칸 (a)~(d)를 채우시오.\n사용 가능: 변수 m, 연산자 /, %, 정수 1000, 500, 100, 10"
+ },
+ {
+  "id": "practical-2023-2-c-3",
+  "round": "2023-2",
+  "no": 17,
+  "lang": "c",
+  "path": "src/practical-2023-2-c-3.c",
+  "answer": ">",
+  "stem": "빈칸에 들어갈 연산자를 작성하시오. (출력: 11 12 22 25 64)"
+ },
+ {
+  "id": "practical-2023-2-c-4",
+  "round": "2023-2",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2023-2-c-4.c",
+  "answer": "n[(i+1) % 5]",
+  "stem": "입력 54321→출력 43215 빈칸 작성"
+ },
+ {
+  "id": "practical-2023-2-c-5",
+  "round": "2023-2",
+  "no": 19,
+  "lang": "c",
+  "path": "src/practical-2023-2-c-5.c",
+  "answer": "BCD",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-2-c-6",
+  "round": "2023-2",
+  "no": 20,
+  "lang": "c",
+  "path": "src/practical-2023-2-c-6.c",
+  "answer": "213465",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-3-c-1",
+  "round": "2023-3",
+  "no": 13,
+  "lang": "c",
+  "path": "src/practical-2023-3-c-1.c",
+  "answer": "34",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-3-java-1",
+  "round": "2023-3",
+  "no": 14,
+  "lang": "java",
+  "path": "src/practical-2023-3-java-1.java",
+  "answer": "BDCDD",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-3-py-1",
+  "round": "2023-3",
+  "no": 15,
+  "lang": "py",
+  "path": "src/practical-2023-3-py-1.py",
+  "answer": "split",
+  "stem": "빈칸에 알맞은 답을 작성하시오. (입력값: \"2 3\")"
+ },
+ {
+  "id": "practical-2023-3-c-2",
+  "round": "2023-3",
+  "no": 16,
+  "lang": "c",
+  "path": "src/practical-2023-3-c-2.c",
+  "answer": "->",
+  "stem": "빈칸에 들어갈 연산자를 작성하시오."
+ },
+ {
+  "id": "practical-2023-3-java-2",
+  "round": "2023-3",
+  "no": 17,
+  "lang": "java",
+  "path": "src/practical-2023-3-java-2.java",
+  "answer": "2",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-3-c-3",
+  "round": "2023-3",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2023-3-c-3.c",
+  "answer": "5040",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2023-3-java-3",
+  "round": "2023-3",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2023-3-java-3.java",
+  "answer": "7",
+  "stem": "에러 발생 라인 번호를 작성하시오."
+ },
+ {
+  "id": "practical-2023-3-c-4",
+  "round": "2023-3",
+  "no": 20,
+  "lang": "c",
+  "path": "src/practical-2023-3-c-4.c",
+  "answer": "KOREA\nOREA\nK\nE\nO",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-1-c-1",
+  "round": "2024-1",
+  "no": 13,
+  "lang": "c",
+  "path": "src/practical-2024-1-c-1.c",
+  "answer": "Nd sc 1",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-1-java-1",
+  "round": "2024-1",
+  "no": 14,
+  "lang": "java",
+  "path": "src/practical-2024-1-java-1.java",
+  "answer": "9",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-1-py-1",
+  "round": "2024-1",
+  "no": 15,
+  "lang": "py",
+  "path": "src/practical-2024-1-py-1.py",
+  "answer": "Seynaau",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-1-c-2",
+  "round": "2024-1",
+  "no": 16,
+  "lang": "c",
+  "path": "src/practical-2024-1-c-2.c",
+  "answer": "9981 and 2795.10",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-1-java-2",
+  "round": "2024-1",
+  "no": 17,
+  "lang": "java",
+  "path": "src/practical-2024-1-java-2.java",
+  "answer": "4",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-1-c-3",
+  "round": "2024-1",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2024-1-c-3.c",
+  "answer": "GECA",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-1-java-3",
+  "round": "2024-1",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2024-1-java-3.java",
+  "answer": "5 → 6 → 3 → 1 → 7 → 2",
+  "stem": "실행 순서를 작성하시오. (5→?)"
+ },
+ {
+  "id": "practical-2024-1-c-4",
+  "round": "2024-1",
+  "no": 20,
+  "lang": "c",
+  "path": "src/practical-2024-1-c-4.c",
+  "answer": "151",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-c-1",
+  "round": "2024-2",
+  "no": 12,
+  "lang": "c",
+  "path": "src/practical-2024-2-c-1.c",
+  "answer": "20",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-java-1",
+  "round": "2024-2",
+  "no": 13,
+  "lang": "java",
+  "path": "src/practical-2024-2-java-1.java",
+  "answer": "dcba",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-py-1",
+  "round": "2024-2",
+  "no": 14,
+  "lang": "py",
+  "path": "src/practical-2024-2-py-1.py",
+  "answer": "ab3ca3",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-c-2",
+  "round": "2024-2",
+  "no": 15,
+  "lang": "c",
+  "path": "src/practical-2024-2-c-2.c",
+  "answer": "-13",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-java-2",
+  "round": "2024-2",
+  "no": 16,
+  "lang": "java",
+  "path": "src/practical-2024-2-java-2.java",
+  "answer": "S",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-c-3",
+  "round": "2024-2",
+  "no": 17,
+  "lang": "c",
+  "path": "src/practical-2024-2-c-3.c",
+  "answer": "10",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-java-3",
+  "round": "2024-2",
+  "no": 18,
+  "lang": "java",
+  "path": "src/practical-2024-2-java-3.java",
+  "answer": "25, 20",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-c-4",
+  "round": "2024-2",
+  "no": 19,
+  "lang": "c",
+  "path": "src/practical-2024-2-c-4.c",
+  "answer": "21",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-2-java-4",
+  "round": "2024-2",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2024-2-java-4.java",
+  "answer": "NNN",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-c-1",
+  "round": "2024-3",
+  "no": 12,
+  "lang": "c",
+  "path": "src/practical-2024-3-c-1.c",
+  "answer": "312",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-java-1",
+  "round": "2024-3",
+  "no": 13,
+  "lang": "java",
+  "path": "src/practical-2024-3-java-1.java",
+  "answer": "OOAAA",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-py-1",
+  "round": "2024-3",
+  "no": 14,
+  "lang": "py",
+  "path": "src/practical-2024-3-py-1.py",
+  "answer": "3",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-c-2",
+  "round": "2024-3",
+  "no": 15,
+  "lang": "c",
+  "path": "src/practical-2024-3-c-2.c",
+  "answer": "1",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-java-2",
+  "round": "2024-3",
+  "no": 16,
+  "lang": "java",
+  "path": "src/practical-2024-3-java-2.java",
+  "answer": "B0",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-py-2",
+  "round": "2024-3",
+  "no": 17,
+  "lang": "py",
+  "path": "src/practical-2024-3-py-2.py",
+  "answer": "45",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-c-3",
+  "round": "2024-3",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2024-3-c-3.c",
+  "answer": "20",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-java-3",
+  "round": "2024-3",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2024-3-java-3.java",
+  "answer": "101",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2024-3-java-4",
+  "round": "2024-3",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2024-3-java-4.java",
+  "answer": "52",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-c-1",
+  "round": "2025-1",
+  "no": 12,
+  "lang": "c",
+  "path": "src/practical-2025-1-c-1.c",
+  "answer": "908",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-java-1",
+  "round": "2025-1",
+  "no": 13,
+  "lang": "java",
+  "path": "src/practical-2025-1-java-1.java",
+  "answer": "4",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-py-1",
+  "round": "2025-1",
+  "no": 14,
+  "lang": "py",
+  "path": "src/practical-2025-1-py-1.py",
+  "answer": "13",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-c-2",
+  "round": "2025-1",
+  "no": 15,
+  "lang": "c",
+  "path": "src/practical-2025-1-c-2.c",
+  "answer": "35421",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-java-2",
+  "round": "2025-1",
+  "no": 16,
+  "lang": "java",
+  "path": "src/practical-2025-1-java-2.java",
+  "answer": "20",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-c-3",
+  "round": "2025-1",
+  "no": 17,
+  "lang": "c",
+  "path": "src/practical-2025-1-c-3.c",
+  "answer": "13",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-java-3",
+  "round": "2025-1",
+  "no": 18,
+  "lang": "java",
+  "path": "src/practical-2025-1-java-3.java",
+  "answer": "54",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-c-4",
+  "round": "2025-1",
+  "no": 19,
+  "lang": "c",
+  "path": "src/practical-2025-1-c-4.c",
+  "answer": "4\nBACDE",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-1-java-4",
+  "round": "2025-1",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2025-1-java-4.java",
+  "answer": "출력1출력5",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-c-1",
+  "round": "2025-2",
+  "no": 12,
+  "lang": "c",
+  "path": "src/practical-2025-2-c-1.c",
+  "answer": "5 그리고 6",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-java-1",
+  "round": "2025-2",
+  "no": 13,
+  "lang": "java",
+  "path": "src/practical-2025-2-java-1.java",
+  "answer": "1a3b3",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-py-1",
+  "round": "2025-2",
+  "no": 14,
+  "lang": "py",
+  "path": "src/practical-2025-2-py-1.py",
+  "answer": "2",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-c-2",
+  "round": "2025-2",
+  "no": 15,
+  "lang": "c",
+  "path": "src/practical-2025-2-c-2.c",
+  "answer": "TSEB",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-java-2",
+  "round": "2025-2",
+  "no": 16,
+  "lang": "java",
+  "path": "src/practical-2025-2-java-2.java",
+  "answer": "5P",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-c-3",
+  "round": "2025-2",
+  "no": 17,
+  "lang": "c",
+  "path": "src/practical-2025-2-c-3.c",
+  "answer": "3 1 2",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-java-3",
+  "round": "2025-2",
+  "no": 18,
+  "lang": "java",
+  "path": "src/practical-2025-2-java-3.java",
+  "answer": "19",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-c-4",
+  "round": "2025-2",
+  "no": 19,
+  "lang": "c",
+  "path": "src/practical-2025-2-c-4.c",
+  "answer": "2 그리고 3",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-2-java-4",
+  "round": "2025-2",
+  "no": 20,
+  "lang": "java",
+  "path": "src/practical-2025-2-java-4.java",
+  "answer": "BB",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-3-c-1",
+  "round": "2025-3",
+  "no": 13,
+  "lang": "c",
+  "path": "src/practical-2025-3-c-1.c",
+  "answer": "E",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-3-java-1",
+  "round": "2025-3",
+  "no": 14,
+  "lang": "java",
+  "path": "src/practical-2025-3-java-1.java",
+  "answer": "AB",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-3-py-1",
+  "round": "2025-3",
+  "no": 15,
+  "lang": "py",
+  "path": "src/practical-2025-3-py-1.py",
+  "answer": "{0: (15, 5), 1: (10, 3), 2: (18, 5), 3: (9, 2)}",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-3-c-2",
+  "round": "2025-3",
+  "no": 16,
+  "lang": "c",
+  "path": "src/practical-2025-3-c-2.c",
+  "answer": "187",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-3-java-2",
+  "round": "2025-3",
+  "no": 17,
+  "lang": "java",
+  "path": "src/practical-2025-3-java-2.java",
+  "answer": "super",
+  "stem": "빈칸 키워드를 작성하시오."
+ },
+ {
+  "id": "practical-2025-3-c-3",
+  "round": "2025-3",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2025-3-c-3.c",
+  "answer": "0",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2025-3-java-3",
+  "round": "2025-3",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2025-3-java-3.java",
+  "answer": "implements",
+  "stem": "빈칸 키워드를 작성하시오."
+ },
+ {
+  "id": "practical-2025-3-c-4",
+  "round": "2025-3",
+  "no": 20,
+  "lang": "c",
+  "path": "src/practical-2025-3-c-4.c",
+  "answer": "C",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-1-c-1",
+  "round": "2026-1",
+  "no": 14,
+  "lang": "c",
+  "path": "src/practical-2026-1-c-1.c",
+  "answer": "106.00",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-1-java-1",
+  "round": "2026-1",
+  "no": 15,
+  "lang": "java",
+  "path": "src/practical-2026-1-java-1.java",
+  "answer": "2",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-1-py-1",
+  "round": "2026-1",
+  "no": 16,
+  "lang": "py",
+  "path": "src/practical-2026-1-py-1.py",
+  "answer": "veDamuH",
+  "stem": "아래 코드의 입력값이 \"HumanDev\"일 때 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-1-c-2",
+  "round": "2026-1",
+  "no": 17,
+  "lang": "c",
+  "path": "src/practical-2026-1-c-2.c",
+  "answer": "20",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-1-java-2",
+  "round": "2026-1",
+  "no": 18,
+  "lang": "java",
+  "path": "src/practical-2026-1-java-2.java",
+  "answer": "1123",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-1-py-2",
+  "round": "2026-1",
+  "no": 19,
+  "lang": "py",
+  "path": "src/practical-2026-1-py-2.py",
+  "answer": "9A7A5A3A1A",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-1-py-3",
+  "round": "2026-1",
+  "no": 20,
+  "lang": "py",
+  "path": "src/practical-2026-1-py-3.py",
+  "answer": "10",
+  "stem": "아래 코드의 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-2-java-1",
+  "round": "2026-2",
+  "no": 14,
+  "lang": "java",
+  "path": "src/practical-2026-2-java-1.java",
+  "answer": "10a20b",
+  "stem": "다음은 Java 코드에 대한 문제이다. 아래 코드를 확인하여 알맞은 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-2-py-1",
+  "round": "2026-2",
+  "no": 15,
+  "lang": "py",
+  "path": "src/practical-2026-2-py-1.py",
+  "answer": "CNNLRPYT",
+  "stem": "다음은 파이썬 코드에 대한 문제이다. 아래 코드를 확인하여 알맞은 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-2-py-2",
+  "round": "2026-2",
+  "no": 16,
+  "lang": "py",
+  "path": "src/practical-2026-2-py-2.py",
+  "answer": "_THIISING",
+  "stem": "다음은 파이썬 코드에 대한 문제이다. 아래 코드를 확인하여 알맞은 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-2-c-1",
+  "round": "2026-2",
+  "no": 17,
+  "lang": "c",
+  "path": "src/practical-2026-2-c-1.c",
+  "answer": "12",
+  "stem": "다음은 C언어 코드에 대한 문제이다. 아래 코드를 확인하여 알맞은 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-2-c-2",
+  "round": "2026-2",
+  "no": 18,
+  "lang": "c",
+  "path": "src/practical-2026-2-c-2.c",
+  "answer": "1. 50\n2. 50\n3. 2\n4. 8",
+  "stem": "다음은 C언어 코드에 대한 문제이다. 아래 코드를 확인하여 알맞은 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-2-java-2",
+  "round": "2026-2",
+  "no": 19,
+  "lang": "java",
+  "path": "src/practical-2026-2-java-2.java",
+  "answer": "509",
+  "stem": "다음은 Java 코드에 대한 문제이다. 아래 코드를 확인하여 알맞은 출력값을 작성하시오."
+ },
+ {
+  "id": "practical-2026-2-c-3",
+  "round": "2026-2",
+  "no": 20,
+  "lang": "c",
+  "path": "src/practical-2026-2-c-3.c",
+  "answer": "1",
+  "stem": "다음은 C언어 코드에 대한 문제이다. 아래 코드를 확인하여 알맞은 출력값을 작성하시오."
+ },
+ {
+  "id": "written-2022-1-77",
+  "round": "2022-1",
+  "no": 77,
+  "lang": "py",
+  "path": "src/written-2022-1-77.py",
+  "answer": "a 90",
+  "stem": "다음 Python 프로그램이 실행되었을 때, 실행 결과는?\n \n 보기"
+ },
+ {
+  "id": "written-2022-1-79",
+  "round": "2022-1",
+  "no": 79,
+  "lang": "py",
+  "path": "src/written-2022-1-79.py",
+  "answer": "대 한 민 국",
+  "stem": "다음 Python 프로그램이 실행되었을 때, 실행 결과는?\n \n 보기"
+ },
+ {
+  "id": "written-2022-3-64",
+  "round": "2022-3",
+  "no": 64,
+  "lang": "py",
+  "path": "src/written-2022-3-64.py",
+  "answer": "53 44",
+  "stem": "아래 파이썬 코드에 ‘53t44’를 입력하면 출력되는 결과는?"
+ },
+ {
+  "id": "written-2022-3-69",
+  "round": "2022-3",
+  "no": 69,
+  "lang": "c",
+  "path": "src/written-2022-3-69.c",
+  "answer": "!(a || b)",
+  "stem": "다음 C언어 프로그램에서 밑줄 친 부분과 같은 의미를 갖는 것은 무엇인가?"
+ },
+ {
+  "id": "written-2022-3-73",
+  "round": "2022-3",
+  "no": 73,
+  "lang": "c",
+  "path": "src/written-2022-3-73.c",
+  "answer": "0",
+  "stem": "아래 C언어 프로그램의 실행 결과로 옳은 것은?"
+ },
+ {
+  "id": "written-2022-3-80",
+  "round": "2022-3",
+  "no": 80,
+  "lang": "c",
+  "path": "src/written-2022-3-80.c",
+  "answer": "three",
+  "stem": "아래 C언어 프로그램을 실행한 뒤 ‘c’를 입력하면 출력되는 결과는?"
+ },
+ {
+  "id": "written-2023-1-64",
+  "round": "2023-1",
+  "no": 64,
+  "lang": "py",
+  "path": "src/written-2023-1-64.py",
+  "answer": "A, B, C 출력이 반복해서 이루어진다.",
+  "stem": "다음은 파이썬으로 작성된 반복문 코드이다. 이 코드를 실행한 결과는?"
+ },
+ {
+  "id": "written-2023-1-73",
+  "round": "2023-1",
+  "no": 73,
+  "lang": "c",
+  "path": "src/written-2023-1-73.c",
+  "answer": "2",
+  "stem": "다음 C 언어 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2023-1-77",
+  "round": "2023-1",
+  "no": 77,
+  "lang": "java",
+  "path": "src/written-2023-1-77.java",
+  "answer": "3",
+  "stem": "다음 JAVA 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2023-1-78",
+  "round": "2023-1",
+  "no": 78,
+  "lang": "c",
+  "path": "src/written-2023-1-78.c",
+  "answer": "18, 10",
+  "stem": "a[0]의 주소 값이 10이라고 할 때, 다음 C 언어 프로그램을 실행한 결과는? (단, int 형의 크기는 4Byte로 가정한다.)"
+ },
+ {
+  "id": "written-2023-2-64",
+  "round": "2023-2",
+  "no": 64,
+  "lang": "c",
+  "path": "src/written-2023-2-64.c",
+  "answer": "60",
+  "stem": "다음 C언어 프로그램을 실행했을 때의 실행 결과는?"
+ },
+ {
+  "id": "written-2023-2-67",
+  "round": "2023-2",
+  "no": 67,
+  "lang": "c",
+  "path": "src/written-2023-2-67.c",
+  "answer": "!(a || b)",
+  "stem": "다음 C언어 프로그램의 밑줄 친 부분과 같은 의미를 갖는 것은 무엇인가?"
+ },
+ {
+  "id": "written-2023-2-74",
+  "round": "2023-2",
+  "no": 74,
+  "lang": "py",
+  "path": "src/written-2023-2-74.py",
+  "answer": "a\n90",
+  "stem": "다음 Python 프로그램을 실행했을 때의 실행 결과는?"
+ },
+ {
+  "id": "written-2023-2-77",
+  "round": "2023-2",
+  "no": 77,
+  "lang": "c",
+  "path": "src/written-2023-2-77.c",
+  "answer": "8",
+  "stem": "다음 C언어 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2023-2-78",
+  "round": "2023-2",
+  "no": 78,
+  "lang": "c",
+  "path": "src/written-2023-2-78.c",
+  "answer": "0",
+  "stem": "다음 C언어 프로그램을 실행한 결과로 옳은 것은?"
+ },
+ {
+  "id": "written-2023-3-69",
+  "round": "2023-3",
+  "no": 69,
+  "lang": "c",
+  "path": "src/written-2023-3-69.c",
+  "answer": "!(a || b)",
+  "stem": "다음 C언어 프로그램에서 밑줄 친 부분과 같은 의미를 갖는 것은 무엇인가?"
+ },
+ {
+  "id": "written-2023-3-73",
+  "round": "2023-3",
+  "no": 73,
+  "lang": "java",
+  "path": "src/written-2023-3-73.java",
+  "answer": "int i = 7, j = 9;\nint k;\nk = (i＞j) ? (i - j) : (i + j);",
+  "stem": "다음 자바 프로그램의 조건문의 조건식과 각 분기의 계산식을 그대로 유지하면서 삼항 조건 연산자로 옳게 나타낸 것은?"
+ },
+ {
+  "id": "written-2023-3-77",
+  "round": "2023-3",
+  "no": 77,
+  "lang": "py",
+  "path": "src/written-2023-3-77.py",
+  "answer": "a\n90",
+  "stem": "다음 Python 프로그램을 실행했을 때의 실행 결과는?"
+ },
+ {
+  "id": "written-2024-1-73",
+  "round": "2024-1",
+  "no": 73,
+  "lang": "c",
+  "path": "src/written-2024-1-73.c",
+  "answer": "31",
+  "stem": "다음 C언어 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2024-1-80",
+  "round": "2024-1",
+  "no": 80,
+  "lang": "py",
+  "path": "src/written-2024-1-80.py",
+  "answer": "hSlu",
+  "stem": "다음 Python 프로그램을 실행했을 때의 출력 결과는?"
+ },
+ {
+  "id": "written-2024-2-62",
+  "round": "2024-2",
+  "no": 62,
+  "lang": "java",
+  "path": "src/written-2024-2-62.java",
+  "answer": "Unresolved compilation problem 오류가 발생한다",
+  "stem": "다음 자바 코드의 실행 결과로 옳은 것은?"
+ },
+ {
+  "id": "written-2024-2-67",
+  "round": "2024-2",
+  "no": 67,
+  "lang": "c",
+  "path": "src/written-2024-2-67.c",
+  "answer": "34",
+  "stem": "다음 C언어 프로그램을 실행했을 때의 결과로 옳은 것은?"
+ },
+ {
+  "id": "written-2024-2-80",
+  "round": "2024-2",
+  "no": 80,
+  "lang": "java",
+  "path": "src/written-2024-2-80.java",
+  "answer": "5, 5, 5",
+  "stem": "다음 JAVA 프로그램을 실행했을 때의 출력 결과는?"
+ },
+ {
+  "id": "written-2024-3-75",
+  "round": "2024-3",
+  "no": 75,
+  "lang": "java",
+  "path": "src/written-2024-3-75.java",
+  "answer": "4",
+  "stem": "다음 Java 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2024-3-76",
+  "round": "2024-3",
+  "no": 76,
+  "lang": "c",
+  "path": "src/written-2024-3-76.c",
+  "answer": "ogani",
+  "stem": "다음 C 언어 프로그램을 실행했을 때의 출력 결과는?"
+ },
+ {
+  "id": "written-2024-3-78",
+  "round": "2024-3",
+  "no": 78,
+  "lang": "java",
+  "path": "src/written-2024-3-78.java",
+  "answer": "4",
+  "stem": "다음 Java 프로그램을 실행했을 때의 실행 결과는?"
+ },
+ {
+  "id": "written-2024-3-80",
+  "round": "2024-3",
+  "no": 80,
+  "lang": "java",
+  "path": "src/written-2024-3-80.java",
+  "answer": "a = 1, sum = 1",
+  "stem": "다음은 Java로 작성된 반복문 코드이다. 이 코드를 실행한 결과는?"
+ },
+ {
+  "id": "written-2025-1-67",
+  "round": "2025-1",
+  "no": 67,
+  "lang": "py",
+  "path": "src/written-2025-1-67.py",
+  "answer": "53 44",
+  "stem": "다음 파이썬 코드에 ‘53t44’를 입력하면 출력되는 결과는?"
+ },
+ {
+  "id": "written-2025-1-71",
+  "round": "2025-1",
+  "no": 71,
+  "lang": "c",
+  "path": "src/written-2025-1-71.c",
+  "answer": "4",
+  "stem": "다음 C 언어 프로그램을 실행한 결과로 옳은 것은?"
+ },
+ {
+  "id": "written-2025-1-72",
+  "round": "2025-1",
+  "no": 72,
+  "lang": "c",
+  "path": "src/written-2025-1-72.c",
+  "answer": "scanf(\"%d\", &n);",
+  "stem": "정수를 입력받아 처리하는 아래 C 언어 프로그램의 괄호 안에 들어갈 알맞은 코드는?"
+ },
+ {
+  "id": "written-2025-1-73",
+  "round": "2025-1",
+  "no": 73,
+  "lang": "java",
+  "path": "src/written-2025-1-73.java",
+  "answer": "3",
+  "stem": "다음 JAVA 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2025-1-79",
+  "round": "2025-1",
+  "no": 79,
+  "lang": "py",
+  "path": "src/written-2025-1-79.py",
+  "answer": "def, forward(distance), left(360//n)",
+  "stem": "다음은 n각형을 화면에 그리는 프로그램을 Python으로 작성한 것이다. 괄호(㉠~㉢)에 들어갈 코드로 알맞은 것은?"
+ },
+ {
+  "id": "written-2025-2-65",
+  "round": "2025-2",
+  "no": 65,
+  "lang": "c",
+  "path": "src/written-2025-2-65.c",
+  "answer": "60",
+  "stem": "다음 C 언어로 작성된 프로그램을 실행했을 때의 출력 결과는?"
+ },
+ {
+  "id": "written-2025-2-67",
+  "round": "2025-2",
+  "no": 67,
+  "lang": "py",
+  "path": "src/written-2025-2-67.py",
+  "answer": "53 44",
+  "stem": "아래 파이썬 코드에 ‘53t44’를 입력하면 출력되는 결과는?"
+ },
+ {
+  "id": "written-2025-2-72",
+  "round": "2025-2",
+  "no": 72,
+  "lang": "java",
+  "path": "src/written-2025-2-72.java",
+  "answer": "Unresolved compilation problem 오류가 발생한다",
+  "stem": "다음 자바 코드의 실행 결과로 옳은 것은?"
+ },
+ {
+  "id": "written-2025-2-74",
+  "round": "2025-2",
+  "no": 74,
+  "lang": "c",
+  "path": "src/written-2025-2-74.c",
+  "answer": "8",
+  "stem": "다음 C 언어 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2025-2-76",
+  "round": "2025-2",
+  "no": 76,
+  "lang": "c",
+  "path": "src/written-2025-2-76.c",
+  "answer": "R",
+  "stem": "다음 C 언어 프로그램을 실행했을 때의 실행 결과는?"
+ },
+ {
+  "id": "written-2025-2-77",
+  "round": "2025-2",
+  "no": 77,
+  "lang": "c",
+  "path": "src/written-2025-2-77.c",
+  "answer": "ogani",
+  "stem": "다음 C언어 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2025-3-61",
+  "round": "2025-3",
+  "no": 61,
+  "lang": "py",
+  "path": "src/written-2025-3-61.py",
+  "answer": "A, B, D 까지만 출력이 이루어진다.",
+  "stem": "다음은 파이썬으로 작성된 반복문 코드이다. 이 코드를 실행한 결과는?"
+ },
+ {
+  "id": "written-2025-3-68",
+  "round": "2025-3",
+  "no": 68,
+  "lang": "java",
+  "path": "src/written-2025-3-68.java",
+  "answer": "java.util",
+  "stem": "다음은 정수 배열 a에 0에서 9까지의 무작위 수를 저장하는 Java 코드이다. 괄호 안에 들어갈 알맞은 코드는?"
+ },
+ {
+  "id": "written-2025-3-71",
+  "round": "2025-3",
+  "no": 71,
+  "lang": "c",
+  "path": "src/written-2025-3-71.c",
+  "answer": "２",
+  "stem": "다음 C언어 프로그램을 실행했을 때의 실행 결과는?"
+ },
+ {
+  "id": "written-2025-3-76",
+  "round": "2025-3",
+  "no": 76,
+  "lang": "py",
+  "path": "src/written-2025-3-76.py",
+  "answer": "4,1,23/5",
+  "stem": "아래 Python 코드의 출력문을 실행한 결과는?"
+ },
+ {
+  "id": "written-2025-3-79",
+  "round": "2025-3",
+  "no": 79,
+  "lang": "py",
+  "path": "src/written-2025-3-79.py",
+  "answer": "gnTir",
+  "stem": "아래 Python 프로그램을 실행했을 때의 실행 결과로 옳은 것은?"
+ },
+ {
+  "id": "written-2025-3-80",
+  "round": "2025-3",
+  "no": 80,
+  "lang": "java",
+  "path": "src/written-2025-3-80.java",
+  "answer": "4",
+  "stem": "다음 Java 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2026-1-66",
+  "round": "2026-1",
+  "no": 66,
+  "lang": "java",
+  "path": "src/written-2026-1-66.java",
+  "answer": "5, 5, 5",
+  "stem": "다음 JAVA 프로그램을 실행했을 때 출력되는 결과는?"
+ },
+ {
+  "id": "written-2026-1-68",
+  "round": "2026-1",
+  "no": 68,
+  "lang": "c",
+  "path": "src/written-2026-1-68.c",
+  "answer": "25",
+  "stem": "다음 C언어 프로그램을 실행한 결과는?"
+ },
+ {
+  "id": "written-2026-1-71",
+  "round": "2026-1",
+  "no": 71,
+  "lang": "c",
+  "path": "src/written-2026-1-71.c",
+  "answer": "three",
+  "stem": "아래 C언어 프로그램을 실행하고 ‘c’를 입력했을 때의 출력 결과는?"
+ },
+ {
+  "id": "written-2026-1-75",
+  "round": "2026-1",
+  "no": 75,
+  "lang": "java",
+  "path": "src/written-2026-1-75.java",
+  "answer": "BCDABCC",
+  "stem": "아래 JAVA 프로그램을 실행했을 때의 실행 결과는?"
+ },
+ {
+  "id": "written-2026-1-76",
+  "round": "2026-1",
+  "no": 76,
+  "lang": "py",
+  "path": "src/written-2026-1-76.py",
+  "answer": "53 44",
+  "stem": "다음 파이썬 코드에 ‘53t44’를 입력하면 출력되는 결과는?"
+ },
+ {
+  "id": "written-2026-1-80",
+  "round": "2026-1",
+  "no": 80,
+  "lang": "c",
+  "path": "src/written-2026-1-80.c",
+  "answer": "8",
+  "stem": "다음 C언어 프로그램을 실행했을 때의 결과는?"
+ }
+]

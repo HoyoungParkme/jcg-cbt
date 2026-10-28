@@ -622,7 +622,7 @@
       let k = Number((S.tracePos || {})[id] || 0); if (k >= steps.length) k = 0;
       let addrAll = !!S.traceAddrAll;
       box.innerHTML = `<div class="trace-h"><b>실행 추적</b><span class="hint">손으로 따라 푸는 순서 그대로</span>${c.fill ? `<span class="pill mark">빈칸을 정답으로 채운 코드</span>` : ""}${c.stdin ? `<span class="pill">입력: ${esc(c.stdin.trim().replace(/\n/g, " ⏎ "))}</span>` : ""}
-          <span class="trace-ctl"><button data-t="first" title="처음">⏮</button><button data-t="prev" title="이전 ( [ 키 )">◀</button><span class="pos" id="tpos"></span><button data-t="next" title="다음 ( ] 키 )">▶</button><button data-t="last" title="끝">⏭</button></span></div>
+          ${stepCtl("tpos")}</div>
         <input type="range" id="trange" min="0" max="${steps.length - 1}" value="${k}">
         <div class="trace-code" id="tcode">${lines.map((ln, i) => `<div class="ln" data-l="${i + 1}"><span class="g">${i + 1}</span><span class="src">${esc(ln) || " "}</span><span class="cv"></span><span class="rv"></span><span class="ok">✓</span></div>`).join("")}</div>
         <div class="trace-now" id="tnow"></div>

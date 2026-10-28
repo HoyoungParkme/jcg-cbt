@@ -1,0 +1,204 @@
+/* ---------- B 디자인: 시험지와 OMR (다른 css 뒤에 붙어 앞의 규칙을 덮는다) ---------- */
+/* JetBrains Mono 합자(->, != 등을 화살표·기호 하나로 그림)는 코드를 다르게 읽히게 하므로 끈다 */
+*{font-variant-ligatures:none;font-feature-settings:"calt" 0,"liga" 0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+
+/* 상단 바: 시험지 머리 */
+.topbar{border-bottom:2px solid var(--ink)}
+.brand{font-family:var(--serif);font-weight:800;font-size:18px;letter-spacing:-.02em}
+.brand small{display:none}
+.nav button{border-radius:0;color:var(--muted);padding:8px 10px;min-height:40px}
+.nav button:hover{background:none;color:var(--fg)}
+.nav button.on{background:none;color:var(--fg);font-weight:700;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:7px}
+.iconbtn{min-height:36px}
+@media (max-width:640px){
+  .topbar .in{flex-wrap:wrap;row-gap:0}
+  .nav{order:3;flex-basis:100%;margin-left:-8px}
+  .nav button{padding:6px 8px;font-size:14px}
+}
+
+/* 제목은 명조 */
+.home-head h1,.page-head h1,.sess-head h1,.section-head h2,.study h2,.notes-body h2,.notes-body h3,.subjscore h3,.group h2,.score .meta b{font-family:var(--serif);font-weight:800;letter-spacing:-.02em}
+.page-head h1{font-size:26px}
+.section-head h2{font-size:19px}
+.eyebrow{text-transform:none;letter-spacing:0;font-size:13px;font-weight:500}
+
+/* 버튼 */
+.btn{border-radius:0;border-color:var(--ink);min-height:40px}
+.btn.sm{min-height:34px}
+.btn:hover{border-color:var(--accent);color:var(--accent-text)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.btn.primary:hover{filter:none;background:var(--accent-text);border-color:var(--accent-text);color:var(--accent-ink)}
+.btn.ghost{border-color:transparent}
+.seg{border-color:var(--ink);border-radius:0}
+.seg button+button{border-left-color:var(--ink)}
+.seg button.on{background:var(--ink);color:var(--paper)}
+.pill{border-radius:0}
+.pill.acc{color:var(--accent-text)}
+
+/* 홈: 표지 + OMR 답안지로 학습 방식 고르기 */
+.home-head h1{font-size:34px;line-height:1.25}
+.home-head h1 .num{font-family:var(--serif);color:var(--accent-text)!important}
+.statline{border:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);background:none}
+.statline div{border-right:0}
+.statline .k{font-size:12.5px}
+.statline .v{font-family:var(--mono)}
+.resume{border-radius:0;border-color:var(--accent);background:var(--paper)}
+.study{border:1px solid var(--accent);border-radius:0;padding:22px 24px 22px 40px;background:var(--paper) repeating-linear-gradient(to bottom,var(--ink) 0 4px,transparent 4px 26px) 10px 18px/9px calc(100% - 36px) no-repeat}
+.study h2{font-size:20px;color:var(--accent-text)}
+.study .lbl{letter-spacing:0;font-size:13px}
+.opt{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;row-gap:2px;align-items:start;border:0;border-radius:0;background:none;padding:8px 6px}
+.opt::before{content:"";grid-row:1/3;width:20px;height:28px;border-radius:10px;border:1.5px solid var(--accent);box-sizing:border-box;margin-top:1px}
+.opt.on{background:none;box-shadow:none}
+.opt.on::before{background:var(--accent)}
+.opt:hover:not(:disabled){background:var(--accent-soft)}
+.opt b{font-size:15.5px}
+.quick button{border-radius:0;border-color:var(--line-strong)}
+.quick button:hover{border-color:var(--ink);box-shadow:none;transform:none}
+.quick .cnt{color:var(--accent-text)}
+.uitem{border-radius:0;border:0;border-bottom:1px solid var(--line);padding:12px 6px}
+.ulist{gap:0;border-top:2px solid var(--ink)}
+.uitem .uk{font-family:var(--serif);font-weight:700;color:var(--fg)}
+.bar{border-radius:0;height:5px}
+.bar .c{background:var(--ok)} .bar .w{background:var(--no)}
+.recent{border-radius:0;border:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}
+
+/* 회차 고르기: 연도 × 회차 표 */
+.rtable-wrap{overflow-x:auto;background:var(--paper);border:1px solid var(--ink)}
+.rtable{border-collapse:collapse;width:100%}
+.rtable thead th{background:var(--paper-2);font-family:var(--serif);font-weight:700;font-size:14px;padding:10px 8px;border-bottom:2px solid var(--ink);border-right:1px solid var(--line)}
+.rtable thead th:first-child,.rtable tbody th{border-right:1px solid var(--ink)}
+.rtable tbody th{font-size:17px;font-weight:700;padding:6px 10px;width:64px}
+.rtable td{padding:6px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:top}
+.rtable tr:last-child td,.rtable tr:last-child th{border-bottom:0}
+.round{width:100%;min-height:68px;text-align:left;background:var(--paper);border:1px solid var(--line-strong);padding:10px 12px;display:flex;flex-direction:column;gap:7px;color:var(--fg)}
+.round:hover{border-color:var(--ink);box-shadow:none;transform:none}
+.round.doing{border-color:var(--accent);background:var(--accent-soft)}
+.round .t{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.round .t b{font-weight:700;font-size:15px}
+.round .st{font-size:13px;font-weight:700;color:var(--accent-text)}
+.round.done .st{color:var(--ok)}
+.round .meta{font-size:11.5px;color:var(--muted)}
+@media (max-width:640px){.rtable tbody th{font-size:14px;padding:4px 6px;width:auto}.rtable td{padding:3px}.round{padding:8px 6px;min-height:58px}.round .t{flex-direction:column;gap:2px}}
+
+/* 단원 고르기 */
+.pick,.uitem.on,.ritem{border-radius:0}
+.pick{border-color:var(--ink)}
+.pick-h b{font-family:var(--serif);font-weight:800;font-size:17px}
+.uitem input,.ritem input,.chk input{accent-color:var(--accent);width:18px;height:18px}
+.uitem.on,.ritem.on{border-color:var(--accent);background:var(--accent-soft)}
+
+/* 풀이 화면: 시험지 한 장 */
+.progress{height:3px;border-radius:0}
+.progress i{background:var(--accent)}
+.pager select,.timer{border-radius:0;border-color:var(--ink)}
+.paper{border:1px solid var(--ink);border-radius:0;box-shadow:none;padding:26px 28px 22px}
+@media (max-width:640px){.paper{padding:18px 16px 16px}}
+.qmeta .qn{font-family:var(--serif);font-weight:800;font-size:18px}
+.markbtn{border-radius:0}
+.markbtn.on{color:var(--mark);border-color:var(--mark);background:var(--mark-bg)}
+.stem{font-family:var(--serif);font-weight:700;font-size:17.5px;line-height:1.75;letter-spacing:-.01em}
+.stem .q-spec,.stem pre.prose{font-family:var(--serif);font-weight:400}
+.stem pre,.stem .q-sql,.codewrap{border-radius:0;border-color:var(--ink)}
+.stem pre code,.stem .q-sql code{font-weight:400}
+.stem img{border-radius:0}
+.hljs-keyword,.hljs-built_in,.hljs-type{color:var(--accent-text)}
+.hljs-string,.hljs-meta-string{color:var(--mark)}
+.hljs-number,.hljs-literal{color:var(--ok)}
+.hljs-title,.hljs-function .hljs-title{color:var(--fg);font-weight:600}
+/* 보기: 번호에 채점 동그라미 */
+.choice{border-radius:0;border-color:var(--line);font-family:var(--serif);font-size:16px}
+.choice .n{border:0;border-radius:0;width:26px;font-family:var(--serif);font-weight:700;font-size:15px;color:var(--muted);position:relative}
+.choice.sel{border-color:var(--accent);background:var(--accent-soft)}
+.choice.sel .n{background:none;color:var(--accent-text)}
+.choice.ok{border-color:var(--ok);background:var(--ok-bg)}
+.choice.ok .n{background:none;color:var(--ok)}
+.choice.ok .n::after{content:"";position:absolute;inset:-6px -4px;border:2.5px solid var(--ok);border-radius:50%;transform:rotate(-12deg)}
+.choice.no{border-color:var(--no);background:var(--no-bg)}
+.choice.no .n{background:none;color:var(--no)}
+.choice.no .n::after{content:"";position:absolute;left:-2px;right:-2px;top:50%;border-top:2.5px solid var(--no);transform:rotate(-35deg)}
+.elim{border-radius:0}
+.short textarea,.short input{border-radius:0;border-color:var(--ink)}
+.short textarea.ok,.short input.ok{font-family:var(--mono)}
+/* 해설 패널 */
+.panel{border-radius:0;border-color:var(--line-strong)}
+.panel-h b{font-family:var(--serif);font-weight:800;font-size:18px}
+.feedback{border-radius:0}
+.feedback.ok{background:var(--ok-bg);box-shadow:inset 3px 0 0 var(--ok)}
+.feedback.no{background:var(--no-bg);box-shadow:inset 3px 0 0 var(--no)}
+.explain{font-size:15px}
+.explain .ex-sec p{font-family:var(--serif);line-height:1.85}
+.explain .ex-sec h4{color:var(--accent-text);font-size:13px}
+.explain .ex-choices li,.explain .ex-steps li{line-height:1.7}
+.explain .ex-choices li .n{font-family:var(--serif);font-weight:700}
+.explain .ex-kw{border-top:1px solid var(--ink)}
+.explain .ex-kw tr:last-child th,.explain .ex-kw tr:last-child td{border-bottom-color:var(--ink)}
+.explain .ex-memo{border-radius:0;font-family:var(--pen);font-size:23px;line-height:1.35;color:var(--accent-text);padding:8px 14px}
+.explain .ex-memo b{font-family:var(--sans);font-size:12.5px;vertical-align:3px}
+/* 답안 현황: OMR 칸 */
+.omr{border-radius:0;border-color:var(--accent)}
+.omr .h b{font-family:var(--serif);font-weight:800;color:var(--accent-text);font-size:15px}
+.grid{gap:6px 4px}
+.grid button{aspect-ratio:auto;height:34px;border:0;background:none;border-radius:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:2px;font-size:10.5px;color:var(--muted)}
+.grid button::before{content:"";order:2;width:12px;height:17px;border-radius:6px;border:1.5px solid var(--accent);box-sizing:border-box}
+.grid button.cur{outline:0;color:var(--fg);font-weight:700;box-shadow:inset 0 -2px 0 var(--fg)}
+.grid button.a,.grid button.o,.grid button.x{background:none;color:var(--muted)}
+.grid button.a::before{background:var(--accent)}
+.grid button.o::before{background:var(--ok);border-color:var(--ok)}
+.grid button.x::before{background:var(--no);border-color:var(--no)}
+.grid button.m::after{inset:auto 2px 0 auto;width:6px;height:6px;border:0;border-radius:50%;background:var(--mark)}
+.omr .legend i{border-radius:4px;height:11px;width:8px}
+.omr .subjhead{font-family:var(--serif);font-weight:700;color:var(--fg);border-top-style:solid}
+
+/* 결과: 성적통지서와 도장 */
+.score{position:relative;border:1px solid var(--ink);border-radius:0;box-shadow:none;padding:28px 30px}
+.score .big{font-family:var(--serif);font-weight:800;font-size:72px}
+.score .big small{font-family:var(--serif)}
+.stamp{width:118px;height:118px;flex:none;border:5px double var(--ok);border-radius:50%;transform:rotate(-10deg);display:grid;place-items:center;color:var(--ok);font-family:var(--serif);font-weight:800;font-size:30px;line-height:1}
+.stamp.fail{border-color:var(--no);color:var(--no);font-size:24px}
+.subjscore,.witem{border-radius:0}
+.subjscore{border-color:var(--line-strong)}
+.srow .track{height:12px;border-radius:0;background:var(--line)}
+.srow .track i{border-radius:0;background:var(--mark)}
+.srow .track i.fail{background:var(--no)}
+.srow .track .cut{background:var(--accent);opacity:1;width:2px}
+.witem .no{font-family:var(--serif);font-weight:700;color:var(--fg)}
+
+/* 오답노트·북마크: 빨간 여백선이 있는 공책 */
+.group{margin-top:26px;background:var(--paper);border:1px solid var(--line-strong);padding:6px 20px 14px 64px;background-image:linear-gradient(90deg,transparent 46px,var(--accent) 46px,var(--accent) 48px,transparent 48px)}
+.group h2{color:var(--fg);font-size:17px;padding:8px 0;border-bottom:1px solid var(--ink);margin-bottom:0}
+.nitem{border:0;border-radius:0;background:none;border-bottom:1px solid var(--line);padding:12px 0}
+.nitem+.nitem{margin-top:0}
+.nitem .q{font-family:var(--serif);font-size:15px;line-height:1.6}
+.nitem .m .times{font-family:var(--pen);font-size:20px;line-height:1;color:var(--accent-text)}
+@media (max-width:640px){.group{padding-left:30px;background-image:linear-gradient(90deg,transparent 16px,var(--accent) 16px,var(--accent) 18px,transparent 18px)}}
+
+/* 요약노트: 교과서 쪽 */
+.notes-nav button{border-radius:0;border-left-width:3px;min-height:40px}
+.notes-nav button.on{color:var(--fg);font-weight:700;border-left-color:var(--accent);background:var(--paper)}
+.notes-body{border:1px solid var(--ink);border-radius:0;padding:30px 34px}
+.notes-body h2{font-size:28px;padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:12px}
+.notes-body h3{font-size:19px;border-top:0}
+.notes-body h3{display:inline-block;background:linear-gradient(transparent 58%,var(--accent-soft) 58%)}
+.notes-body section{margin-top:22px}
+.notes-body p,.notes-body li{font-family:var(--serif)}
+.notes-body table{border-top:2px solid var(--ink)}
+.notes-body th,.notes-body td{border:0;border-bottom:1px solid var(--line)}
+.notes-body th{background:none}
+.notes-body code,.notes-body pre{border-radius:0}
+
+/* 실행 추적: 모눈 연습지에 손글씨 */
+.trace-ctl button{display:inline-grid;place-items:center;width:36px;height:34px;padding:0;border-radius:0;border-color:var(--line-strong)}
+.trace-ctl button[data-t="next"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.trace-code,.trace-now,.hb-sec,.fg,.tsec,.trace-opts button{border-radius:0}
+.hb-sec{background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.fg{border-color:var(--ink);border-width:1.5px}
+.fg.top{border-color:var(--accent)}
+.fg-h{background:var(--paper);border-bottom:1px solid var(--ink)}
+.fg.top .fg-h{background:var(--accent-soft)}
+.vr .vv,.at tr.row td,.stk em.cur{font-family:var(--pen);font-size:26px;line-height:1.05}
+.vr{align-items:center}
+.c s,.stk s{font-family:var(--pen);font-size:21px}
+.now{padding:0 5px}
+.tout{border-radius:0;font-family:var(--mono)}

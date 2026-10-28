@@ -1,0 +1,1694 @@
+[
+ {
+  "id": "practical-2020-1-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "50758595100",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-1-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "0 1 2 3",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-1-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "-8",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-2-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "Child",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2020-2-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "{'홍콩', '중국', '태국', '한국', '베트남'}",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-2-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "a=10",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-3-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "0",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-3-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "Vehicle name:Spark",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-3-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "234",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-3-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "30",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-4-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "KOREA\nEA\nK\nE\nM",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-4-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "1",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-4-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "[1, 2, 3]\n7\n123\n45\n6789",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2020-4-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "1 4 7 10 13 \n2 5 8 11 14 \n3 6 9 12 15",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2020-4-java-3",
+  "lang": "java",
+  "status": "ok",
+  "out": "00001010",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2021-1-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "Lee\n38",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-1-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "0+1+2+3+4+5=15",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-1-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "skiddp",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-1-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "3\n1\n45\n50\n89",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-2-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "8",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-2-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "11",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-2-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "26",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-2-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "1024",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-2-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "positive",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2021-3-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "501",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-3-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "7",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-3-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "False",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-3-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "37",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2021-3-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "3",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-1-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "29",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-1-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "2000",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-1-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "a= 20 b= 2",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-1-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "120",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-1-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "message",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2022-1-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "4321",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2022-2-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "22",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-2-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "-8",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-2-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "REMEMBER AND STR",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-2-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "10",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-2-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "61",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-2-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "2",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-3-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-3-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "993",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-3-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "[101, 102, 103, 104, 105]",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-3-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "24513",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-3-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "0123",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2022-3-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "2",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-1-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "qwe",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-1-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "10\n11\n10\n20",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-1-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "{'태국', '홍콩', '베트남', '중국', '한국'}",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-1-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "Art\nA\nA\nArt\nArt",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-1-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "500",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-1-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "46",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2023-1-java-3",
+  "lang": "java",
+  "status": "ok",
+  "out": "Vehicle name: Spark",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-1-java-4",
+  "lang": "java",
+  "status": "ok",
+  "out": "1 2 3 5 7 8",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2023-2-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "505",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-2-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "true\nfalse\ntrue\ntrue",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-2-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "engneing",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-2-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "입력하세요 : 입력하세요 : 입력하세요 : 박영희\n박영희\n박영희",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-2-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "4\n1\n1\n2",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2023-2-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "11 12 22 25 64",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2023-2-c-4",
+  "lang": "c",
+  "status": "ok",
+  "out": "숫자를 입력해주세요 : 숫자를 입력해주세요 : 숫자를 입력해주세요 : 숫자를 입력해주세요 : 숫자를 입력해주세요 : 43215",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2023-2-c-5",
+  "lang": "c",
+  "status": "ok",
+  "out": "BCD",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-2-c-6",
+  "lang": "c",
+  "status": "ok",
+  "out": "213465",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-3-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "34",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-3-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "BDCDD",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-3-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "파이썬 입출력에 대한 문제입니다.\n2 3",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2023-3-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "Lee\n41",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2023-3-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "2",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-3-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "5040",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-3-java-3",
+  "lang": "java",
+  "status": "compile",
+  "out": "",
+  "err": "build/practical-2023-3-java-3/main.java:7: error: non-static variable name cannot be referenced from a static context\n        return name; \n               ^\n1 error",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "practical-2023-3-c-4",
+  "lang": "c",
+  "status": "ok",
+  "out": "KOREA\nOREA\nK\nE\nO",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-1-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "Nd sc 1",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-1-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "9",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-1-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "Seynaau",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-1-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "9981 and 2795.10",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-1-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "4",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-1-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "GECA",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-1-java-3",
+  "lang": "java",
+  "status": "ok",
+  "out": "12",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-1-c-4",
+  "lang": "c",
+  "status": "ok",
+  "out": "151",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "20",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "dcba",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "ab3ca3",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "-13",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "S",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "10",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-java-3",
+  "lang": "java",
+  "status": "ok",
+  "out": "25, 20",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-c-4",
+  "lang": "c",
+  "status": "ok",
+  "out": "21",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-2-java-4",
+  "lang": "java",
+  "status": "ok",
+  "out": "NNN",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "312",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "OOAAA",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "3",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "1",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "B0",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-py-2",
+  "lang": "py",
+  "status": "ok",
+  "out": "45",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "20",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-java-3",
+  "lang": "java",
+  "status": "ok",
+  "out": "101",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2024-3-java-4",
+  "lang": "java",
+  "status": "ok",
+  "out": "52",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "908",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "4",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "13",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "35421",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "20",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "13",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-java-3",
+  "lang": "java",
+  "status": "ok",
+  "out": "54",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-c-4",
+  "lang": "c",
+  "status": "ok",
+  "out": "4\nBACDE",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-1-java-4",
+  "lang": "java",
+  "status": "ok",
+  "out": "출력1출력5",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "5 그리고 6",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "1a3b3",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "2",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "TSEB",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "5P",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "3 1 2",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-java-3",
+  "lang": "java",
+  "status": "ok",
+  "out": "19",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-c-4",
+  "lang": "c",
+  "status": "ok",
+  "out": "2 그리고 3",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-2-java-4",
+  "lang": "java",
+  "status": "ok",
+  "out": "BB",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-3-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "E",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-3-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "AB",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-3-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "{0: (15, 5), 1: (10, 3), 2: (18, 5), 3: (9, 2)}",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-3-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "187",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-3-java-2",
+  "lang": "java",
+  "status": "nomain",
+  "out": "",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2025-3-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "0",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2025-3-java-3",
+  "lang": "java",
+  "status": "nomain",
+  "out": "",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "practical-2025-3-c-4",
+  "lang": "c",
+  "status": "ok",
+  "out": "C",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-1-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "106.00",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-1-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "2",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-1-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "veDamuH",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-1-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "20",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-1-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "1123",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-1-py-2",
+  "lang": "py",
+  "status": "ok",
+  "out": "9A7A5A3A1A",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-1-py-3",
+  "lang": "py",
+  "status": "ok",
+  "out": "10",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-2-java-1",
+  "lang": "java",
+  "status": "ok",
+  "out": "10a20b",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-2-py-1",
+  "lang": "py",
+  "status": "ok",
+  "out": "CNNLRPYT",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-2-py-2",
+  "lang": "py",
+  "status": "ok",
+  "out": "_THIISING",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-2-c-1",
+  "lang": "c",
+  "status": "ok",
+  "out": "12",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-2-c-2",
+  "lang": "c",
+  "status": "ok",
+  "out": "1. 50\n2. 50\n3. 2\n4. 8",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-2-java-2",
+  "lang": "java",
+  "status": "ok",
+  "out": "509",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "practical-2026-2-c-3",
+  "lang": "c",
+  "status": "ok",
+  "out": "1",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2022-1-77",
+  "lang": "py",
+  "status": "ok",
+  "out": "a\n90",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2022-1-79",
+  "lang": "py",
+  "status": "ok",
+  "out": "대\n한\n민\n국",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2022-3-64",
+  "lang": "py",
+  "status": "ok",
+  "out": "53 44",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2022-3-69",
+  "lang": "c",
+  "status": "ok",
+  "out": "1000",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2022-3-73",
+  "lang": "c",
+  "status": "ok",
+  "out": "0",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2022-3-80",
+  "lang": "c",
+  "status": "ok",
+  "out": "three",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2023-1-64",
+  "lang": "py",
+  "status": "runtime",
+  "out": "",
+  "err": "File \"/home/hypark/dev/personal/jcg-cbt/tools/trace/build/written-2023-1-64/main.py\", line 1\n    >> while(True) :\n    ^^\nSyntaxError: invalid syntax",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2023-1-73",
+  "lang": "c",
+  "status": "ok",
+  "out": "2",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2023-1-77",
+  "lang": "java",
+  "status": "ok",
+  "out": "3",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2023-1-78",
+  "lang": "c",
+  "status": "ok",
+  "out": "3156304872, 3156304864",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2023-2-64",
+  "lang": "c",
+  "status": "ok",
+  "out": "60",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2023-2-67",
+  "lang": "c",
+  "status": "ok",
+  "out": "1000",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2023-2-74",
+  "lang": "py",
+  "status": "ok",
+  "out": "a\n90",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2023-2-77",
+  "lang": "c",
+  "status": "ok",
+  "out": "8",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2023-2-78",
+  "lang": "c",
+  "status": "ok",
+  "out": "0",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2023-3-69",
+  "lang": "c",
+  "status": "ok",
+  "out": "1000",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2023-3-73",
+  "lang": "java",
+  "status": "ok",
+  "out": "",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2023-3-77",
+  "lang": "py",
+  "status": "ok",
+  "out": "a\n90",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2024-1-73",
+  "lang": "c",
+  "status": "ok",
+  "out": "31",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2024-1-80",
+  "lang": "py",
+  "status": "ok",
+  "out": "hSlu",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2024-2-62",
+  "lang": "java",
+  "status": "compile",
+  "out": "",
+  "err": "build/written-2024-2-62/Main.java:8: error: ')' expected\nSystem.out.println(\"x=\" x+\"y=\" y);\n                       ^\nbuild/written-2024-2-62/Main.java:8: error: not a statement\nSystem.out.println(\"x=\" x+\"y=\" y);\n                         ^\nbuild/written-2024-2-62/Main.java:8: error: ';' expected\nSystem.out.println(\"x=\" x+\"y=\" y);\n                              ^\nbuild/written-2024-2-62/Main.java:8: ",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2024-2-67",
+  "lang": "c",
+  "status": "ok",
+  "out": "34",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2024-2-80",
+  "lang": "java",
+  "status": "ok",
+  "out": "5, 5, 5",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2024-3-75",
+  "lang": "java",
+  "status": "ok",
+  "out": "4",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2024-3-76",
+  "lang": "c",
+  "status": "ok",
+  "out": "ogani",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2024-3-78",
+  "lang": "java",
+  "status": "ok",
+  "out": "4",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2024-3-80",
+  "lang": "java",
+  "status": "compile",
+  "out": "",
+  "err": "build/written-2024-3-80/Main.java:4: error: illegal '.'\n..생략..\n ^\nbuild/written-2024-3-80/Main.java:4: error: illegal '.'\n..생략..\n     ^\nbuild/written-2024-3-80/Main.java:4: error: not a statement\n..생략..\n  ^\nbuild/written-2024-3-80/Main.java:10: error: illegal '.'\n..생략..\n ^\nbuild/written-2024-3-80/Main.java:10: error: illegal '.'\n..생략..\n     ^\nbuild/written-2024-3-80/Main.java:10: error: not a stat",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2025-1-67",
+  "lang": "py",
+  "status": "ok",
+  "out": "53 44",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-1-71",
+  "lang": "c",
+  "status": "ok",
+  "out": "4",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-1-72",
+  "lang": "c",
+  "status": "ok",
+  "out": "8",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "written-2025-1-73",
+  "lang": "java",
+  "status": "ok",
+  "out": "3",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-1-79",
+  "lang": "py",
+  "status": "runtime",
+  "out": "",
+  "err": "File \"/home/hypark/dev/personal/jcg-cbt/tools/trace/build/written-2025-1-79/main.py\", line 2\n    ( ㉠ ) shape(distance, n):\n      ^\nSyntaxError: invalid character '㉠' (U+3260)",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2025-2-65",
+  "lang": "c",
+  "status": "ok",
+  "out": "60",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-2-67",
+  "lang": "py",
+  "status": "ok",
+  "out": "53 44",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-2-72",
+  "lang": "java",
+  "status": "compile",
+  "out": "",
+  "err": "build/written-2025-2-72/Main.java:8: error: ')' expected\nSystem.out.println(\"x=\" x+ \"y=\" y);\n                       ^\nbuild/written-2025-2-72/Main.java:8: error: not a statement\nSystem.out.println(\"x=\" x+ \"y=\" y);\n                         ^\nbuild/written-2025-2-72/Main.java:8: error: ';' expected\nSystem.out.println(\"x=\" x+ \"y=\" y);\n                               ^\nbuild/written-2025-2-72/Main.java",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2025-2-74",
+  "lang": "c",
+  "status": "ok",
+  "out": "8",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-2-76",
+  "lang": "c",
+  "status": "ok",
+  "out": "R",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-2-77",
+  "lang": "c",
+  "status": "ok",
+  "out": "ogani",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-3-61",
+  "lang": "py",
+  "status": "ok",
+  "out": "A\nB\nD",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2025-3-68",
+  "lang": "java",
+  "status": "ok",
+  "out": "",
+  "err": "",
+  "match": false,
+  "fill": true
+ },
+ {
+  "id": "written-2025-3-71",
+  "lang": "c",
+  "status": "ok",
+  "out": "2",
+  "err": "",
+  "match": false,
+  "fill": false
+ },
+ {
+  "id": "written-2025-3-76",
+  "lang": "py",
+  "status": "ok",
+  "out": "4,1,23/5",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-3-79",
+  "lang": "py",
+  "status": "ok",
+  "out": "gnTir",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2025-3-80",
+  "lang": "java",
+  "status": "ok",
+  "out": "4",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2026-1-66",
+  "lang": "java",
+  "status": "ok",
+  "out": "5, 5, 5",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2026-1-68",
+  "lang": "c",
+  "status": "ok",
+  "out": "25",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2026-1-71",
+  "lang": "c",
+  "status": "ok",
+  "out": "three",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2026-1-75",
+  "lang": "java",
+  "status": "ok",
+  "out": "BCDABCC",
+  "err": "",
+  "match": true,
+  "fill": true
+ },
+ {
+  "id": "written-2026-1-76",
+  "lang": "py",
+  "status": "ok",
+  "out": "53 44",
+  "err": "",
+  "match": true,
+  "fill": false
+ },
+ {
+  "id": "written-2026-1-80",
+  "lang": "c",
+  "status": "ok",
+  "out": "8",
+  "err": "",
+  "match": true,
+  "fill": false
+ }
+]

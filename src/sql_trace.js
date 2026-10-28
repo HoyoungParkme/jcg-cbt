@@ -265,7 +265,7 @@
       let run; try { run = this.run(tables, sql); } catch (e) { box.innerHTML = `<div class="trace-note">쿼리를 읽지 못했어요: ${esc(e.message || String(e))}</div>`; return; }
       const { lines, steps } = run; if (!steps.length) { box.innerHTML = `<div class="trace-note">${esc(run.error || "단계가 없습니다")}</div>`; return; }
       let k = 0;
-      box.innerHTML = `<div class="trace-h"><b>SQL 판</b><span class="hint">FROM → WHERE → SELECT 순서로, 테이블 묶음이 생기고 지워지는 대로</span><span class="trace-ctl"><button data-t="first">⏮</button><button data-t="prev">◀</button><span class="pos" id="sqlpos"></span><button data-t="next">▶</button><button data-t="last">⏭</button></span></div>
+      box.innerHTML = `<div class="trace-h"><b>SQL 판</b><span class="hint">FROM → WHERE → SELECT 순서로, 테이블 묶음이 생기고 지워지는 대로</span>${stepCtl("sqlpos")}</div>
         <input type="range" id="sqlrange" min="0" max="${steps.length - 1}" value="0">
         <div class="trace-code" id="sqlcode">${lines.map((ln, i) => `<div class="ln" data-l="${i + 1}"><span class="g">${i + 1}</span><span class="src">${esc(ln)}</span></div>`).join("")}</div>
         <div class="trace-now" id="sqlnow"></div><div id="sqlboard"></div>
